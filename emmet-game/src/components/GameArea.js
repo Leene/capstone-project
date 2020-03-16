@@ -1,6 +1,7 @@
 import React, { Fragment } from "react"
 import "../css/Style.css"
 import GameInterface from "./GameInterface"
+import Keyboard from "./Keyboard"
 
 export default function GameArea() {
     return (
@@ -9,9 +10,7 @@ export default function GameArea() {
                 <p>(gamefield)</p>
                 <div className="gameinterface">
                     {GameInterface()}
-                    <section className="keybord">
-                        <p>(keybord)</p>
-                    </section>
+                    <section className="keybord">{Keyboard()}</section>
                 </div>
             </section>
         </Fragment>
