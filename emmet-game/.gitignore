@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 .App.css
+.todo.md
 
 # testing
 /coverage
