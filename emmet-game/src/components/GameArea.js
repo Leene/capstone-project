@@ -10,7 +10,7 @@ export default function GameArea() {
                 <p>(gamefield)</p>
                 <div className="gameinterface">
                     {GameInterface()}
-                    <section className="keybord">{Keyboard()}</section>
+                    <section className="keyboard">{Keyboard()}</section>
                 </div>
             </section>
         </Fragment>
