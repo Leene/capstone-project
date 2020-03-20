@@ -10,20 +10,27 @@ import styled from "styled-components/macro"
 import GameArea from "./components/GameArea"
 import StartArea from "./components/StartArea"
 
+const home_icon = "https://img.icons8.com/material-rounded/24/ffffff/home.png"
+const start_icon =
+    "https://img.icons8.com/ios-filled/24/ffffff/circled-play.png"
+
 export default function App() {
     return (
         <>
             <main>
                 <Router>
                     <NavigationStyled>
-                        {/*<nav> */}
                         <div className="nav__home">
-                            <LinkStyled to="/">Home</LinkStyled>
+                            <LinkStyled to="/">
+                                <img alt="" src={home_icon} />
+                            </LinkStyled>
                         </div>
                         <div className="nav__title"></div>
 
                         <div className="nav__gamearea">
-                            <LinkStyled to="/gamearea">Start</LinkStyled>
+                            <LinkStyled2 to="/gamearea">
+                                <img alt="" src={start_icon} />
+                            </LinkStyled2>
                         </div>
                     </NavigationStyled>
 
@@ -40,7 +47,24 @@ export default function App() {
 const home = () => StartArea()
 
 const gamearea = () => GameArea()
+const LinkStyled2 = styled(NavLink)`
+    flex-grow: 1;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: gray;
+    height: 120%;
+    border-radius: 0 0 0 100px;
 
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px 0px 4px 3px rgba(32, 13, 94, 0.2);
+
+    &.active {
+        background: purple;
+    }
+`
 const LinkStyled = styled(NavLink)`
     flex-grow: 1;
     color: white;
@@ -49,7 +73,9 @@ const LinkStyled = styled(NavLink)`
     justify-content: center;
     align-items: center;
     background: gray;
-    height: 100%;
+    height: 120%;
+    border-radius: 0 0 100px 0;
+
     /* offset-x | offset-y | blur-radius | spread-radius | color */
     box-shadow: 0px 0px 4px 3px rgba(32, 13, 94, 0.2);
 

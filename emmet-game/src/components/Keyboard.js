@@ -1,6 +1,7 @@
 import React, { Fragment } from "react"
 import "../css/Style.css"
 import { signs } from "../data/keyboard_symbols.json"
+import styled from "styled-components"
 
 export default function Keyboard() {
     const sym0 = signs[0].symbol
@@ -49,10 +50,20 @@ export default function Keyboard() {
                 <div>{sym11}</div>
             </div>
             <div className="keys_middle">
-                <div>{sym12}</div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                {/* <div>{sym12}</div>
                 <div>{sym13}</div>
                 <div>{sym14}</div>
-                <div>{sym15}</div>
+                <div>{sym15}</div> */}
+
+                {/* <div>function</div>
+                <div>const</div>
+                <div>let</div>
+                <div>className</div> */}
             </div>
             <div className="keys_right">
                 <div>{sym16}</div>
@@ -71,3 +82,12 @@ export default function Keyboard() {
         </Fragment>
     )
 }
+
+const Container = styled.div`
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, 100px);
+    grid-auto-rows: 100px;
+    justify-content: ${props => props.justify || "center"};
+    background-color: lavender;
+`
