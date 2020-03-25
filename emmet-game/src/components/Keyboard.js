@@ -35,25 +35,25 @@ export default function Keyboard() {
 
     return (
         <Fragment>
-            <div className="keys_left">
-                <div>{sym0}</div>
-                <div>{sym1}</div>
-                <div>{sym2}</div>
-                <div>{sym3}</div>
-                <div>{sym4}</div>
-                <div>{sym5}</div>
-                <div>{sym6}</div>
-                <div>{sym7}</div>
-                <div>{sym8}</div>
-                <div>{sym9}</div>
-                <div>{sym10}</div>
-                <div>{sym11}</div>
-            </div>
-            <div className="keys_middle">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+            <KeysSide>
+                <KeysSideDiv>{sym0}</KeysSideDiv>
+                <KeysSideDiv>{sym1}</KeysSideDiv>
+                <KeysSideDiv>{sym2}</KeysSideDiv>
+                <KeysSideDiv>{sym3}</KeysSideDiv>
+                <KeysSideDiv>{sym4}</KeysSideDiv>
+                <KeysSideDiv>{sym5}</KeysSideDiv>
+                <KeysSideDiv>{sym6}</KeysSideDiv>
+                <KeysSideDiv>{sym7}</KeysSideDiv>
+                <KeysSideDiv>{sym8}</KeysSideDiv>
+                <KeysSideDiv>{sym9}</KeysSideDiv>
+                <KeysSideDiv>{sym10}</KeysSideDiv>
+                <KeysSideDiv>{sym11}</KeysSideDiv>
+            </KeysSide>
+            <KeysMiddle>
+                <KeysMiddleDiv>m</KeysMiddleDiv>
+                <KeysMiddleDiv>g</KeysMiddleDiv>
+                <KeysMiddleDiv></KeysMiddleDiv>
+                <KeysMiddleDiv></KeysMiddleDiv>
 
                 {/* <div>{sym12}</div>
                 <div>{sym13}</div>
@@ -64,30 +64,74 @@ export default function Keyboard() {
                 <div>const</div>
                 <div>let</div>
                 <div>className</div> */}
-            </div>
-            <div className="keys_right">
-                <div>{sym16}</div>
-                <div>{sym17}</div>
-                <div>{sym18}</div>
-                <div>{sym19}</div>
-                <div>{sym20}</div>
-                <div>{sym21}</div>
-                <div>{sym22}</div>
-                <div>{sym23}</div>
-                <div>{sym24}</div>
-                <div>{sym25}</div>
-                <div>{sym26}</div>
-                <div>{sym27}</div>
-            </div>
+            </KeysMiddle>
+            <KeysSide>
+                <KeysSideDiv>{sym16}</KeysSideDiv>
+                <KeysSideDiv>{sym17}</KeysSideDiv>
+                <KeysSideDiv>{sym18}</KeysSideDiv>
+                <KeysSideDiv>{sym19}</KeysSideDiv>
+                <KeysSideDiv>{sym20}</KeysSideDiv>
+                <KeysSideDiv>{sym21}</KeysSideDiv>
+                <KeysSideDiv>{sym22}</KeysSideDiv>
+                <KeysSideDiv>{sym23}</KeysSideDiv>
+                <KeysSideDiv>{sym24}</KeysSideDiv>
+                <KeysSideDiv>{sym25}</KeysSideDiv>
+                <KeysSideDiv>{sym26}</KeysSideDiv>
+                <KeysSideDiv>{sym27}</KeysSideDiv>
+            </KeysSide>
         </Fragment>
     )
 }
 
-const Container = styled.div`
-    display: grid;
-    grid-gap: 5px;
-    grid-template-columns: repeat(auto-fit, 100px);
-    grid-auto-rows: 100px;
-    justify-content: ${props => props.justify || "center"};
-    background-color: lavender;
+const KeysSide = styled.div`
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 35vw;
+    height: 30vh;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #566fad;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
+
+}
+`
+const KeysSideDiv = styled.div`
+    width: 33%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:active {
+        color: #f2fcfd;
+        background: linear-gradient(
+            45deg,
+            rgb(75, 192, 215) 100%,
+            rgb(220, 236, 255) 10%
+        );
+        box-shadow: 2px 2px 5px 6px rgba(58, 32, 10, 0.2);
+        margin-top: -2em;
+    }
+`
+
+//  color: #f2fcfd;
+const KeysMiddle = styled.div`
+    width: 30%;
+`
+
+const KeysMiddleDiv = styled.div`
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:active {
+        color: #f2fcfd;
+        background: linear-gradient(
+            45deg,
+            rgb(75, 192, 215) 100%,
+            rgb(220, 236, 255) 10%
+        );
+        box-shadow: 2px 2px 5px 6px rgba(58, 32, 10, 0.2);
+    }
 `

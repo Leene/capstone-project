@@ -17,21 +17,21 @@ const start_icon =
 export default function App() {
     return (
         <>
-            <main>
+            <Main>
                 <Router>
                     <NavigationStyled>
-                        <div className="nav__home">
+                        <NavItemHome>
                             <LinkStyled to="/">
                                 <img alt="" src={home_icon} />
                             </LinkStyled>
-                        </div>
-                        <div className="nav__title"></div>
+                        </NavItemHome>
+                        <NavItemMiddle></NavItemMiddle>
 
-                        <div className="nav__gamearea">
+                        <NavItemPlay>
                             <LinkStyled2 to="/gamearea">
                                 <img alt="" src={start_icon} />
                             </LinkStyled2>
-                        </div>
+                        </NavItemPlay>
                     </NavigationStyled>
 
                     <Switch>
@@ -39,7 +39,7 @@ export default function App() {
                         <Route path="/gamearea" component={gamearea} />
                     </Switch>
                 </Router>
-            </main>
+            </Main>
         </>
     )
 }
@@ -47,6 +47,19 @@ export default function App() {
 const home = () => StartArea()
 
 const gamearea = () => GameArea()
+
+const Main = styled.main`
+    background: linear-gradient(
+        0deg,
+        rgba(75, 192, 215, 1) 9%,
+        rgba(92, 45, 253, 1) 100%
+    );
+    height: 100vh;
+    width: 100vw;
+    font-size: calc(10px + 2vmin);
+    color: #555;
+`
+
 const LinkStyled2 = styled(NavLink)`
     flex-grow: 1;
     color: white;
@@ -79,13 +92,38 @@ const LinkStyled = styled(NavLink)`
     /* offset-x | offset-y | blur-radius | spread-radius | color */
     box-shadow: 0px 0px 4px 3px rgba(32, 13, 94, 0.2);
 
-    &.active {
+    &:active {
         background: purple;
     }
 `
 
 const NavigationStyled = styled.nav`
     display: grid;
-    grid-auto-flow: column;
-    gap: 1px;
+    grid-template-areas: "home middle play";
+    grid-template-rows: 40px;
+    grid-template-columns: 1fr 4fr 1fr;
+    text-align: center;
+`
+//     display: grid;
+//     grid-auto-flow: column;
+//     gap: 1px;
+
+const NavItemHome = styled.div`
+    grid-area: home;
+
+    & img {
+        margin: -5px 0 0 -10px;
+    }
+`
+
+const NavItemMiddle = styled.div`
+    grid-area: title;
+`
+
+const NavItemPlay = styled.div`
+    grid-area: play;
+
+    & img {
+        margin: -5px -10px 0 0;
+    }
 `
