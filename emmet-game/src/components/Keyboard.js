@@ -18,21 +18,7 @@ export default function Keyboard() {
     }
     return (
         <>
-            <KeysSide className="Result5">
-                {renderLeftKeys()}
-
-                {/* <KeysSideDiv>{sym1}</KeysSideDiv>
-                <KeysSideDiv>{sym2}</KeysSideDiv>
-                <KeysSideDiv>{sym3}</KeysSideDiv>
-                <KeysSideDiv>{sym4}</KeysSideDiv>
-                <KeysSideDiv>{sym5}</KeysSideDiv>
-                <KeysSideDiv>{sym6}</KeysSideDiv>
-                <KeysSideDiv>{sym7}</KeysSideDiv>
-                <KeysSideDiv>{sym8}</KeysSideDiv>
-                <KeysSideDiv>{sym9}</KeysSideDiv>
-                <KeysSideDiv>{sym10}</KeysSideDiv>
-                <KeysSideDiv>{sym11}</KeysSideDiv> */}
-            </KeysSide>
+            <KeysSide className="Result5">{renderLeftKeys()}</KeysSide>
             <KeysMiddle>
                 <KeysMiddleDiv>m</KeysMiddleDiv>
                 <KeysMiddleDiv>g</KeysMiddleDiv>
@@ -42,20 +28,6 @@ export default function Keyboard() {
             <KeysSide>{renderRightKeys()}</KeysSide>
         </>
     )
-}
-
-function createKey(i) {
-    const key = signs[i].symbol
-    return <KeysSideDiv>{key}</KeysSideDiv>
-}
-
-function displayAllKeysOfOneSide(min, max) {
-    let amountOfKeys
-    for (let y = min; y < max; y++) {
-        amountOfKeys += createKey(y)
-        console.log("y:" + y)
-    }
-    return amountOfKeys
 }
 
 const KeysSide = styled.div`
