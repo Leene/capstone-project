@@ -1,44 +1,41 @@
-import React, { Fragment } from "react"
+import React from "react"
 import "../css/Style.css"
 import styled from "styled-components"
 
 export default function GameField() {
     return (
-        <Fragment>
-            <Boxarea>
-                <Box>
-                    <Textbox>
-                        <code>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing
-                            elit. Nesciunt doloremque corrupti aperiam impedit
-                            orrupti aperiam impedit
-                        </code>
-                    </Textbox>
-                </Box>
+        <Boxarea>
+            <Box>
+                <Textbox>
+                    <code>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt doloremque corrupti aperiam impedit
+                        orrupti aperiam impedit
+                    </code>
+                </Textbox>
+            </Box>
 
-                <Box>
-                    <Textbox>
-                        <code>
-                            {" "}
-                            Lorem ipsum dolor sit, amet consectetur adipisicing
-                            elit. Nesciunt doloremque corrupti aperiam impedit
-                            laudantium aut vero ipsa at adipisci sit cum officia
-                            molestiae, eligendi ea repellendus ducimus esse
-                            tenetur ut.
-                        </code>
-                    </Textbox>
-                </Box>
-                <Box>
-                    <Textbox>
-                        <code>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing
-                            elit. Nesciunt doloremque corrupti aperiam impedit
-                            orrupti aperiam impedit
-                        </code>
-                    </Textbox>
-                </Box>
-            </Boxarea>
-        </Fragment>
+            <Box>
+                <Textbox>
+                    <code>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt doloremque corrupti aperiam impedit
+                        laudantium aut vero ipsa at adipisci sit cum officia
+                        molestiae, eligendi ea repellendus ducimus esse tenetur
+                        ut.
+                    </code>
+                </Textbox>
+            </Box>
+            <Box>
+                <Textbox>
+                    <code>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Nesciunt doloremque corrupti aperiam impedit
+                        orrupti aperiam impedit
+                    </code>
+                </Textbox>
+            </Box>
+        </Boxarea>
     )
 }
 

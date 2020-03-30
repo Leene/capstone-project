@@ -1,42 +1,25 @@
-import React, { Fragment } from "react"
+import React from "react"
 import "../css/Style.css"
 import { signs } from "../data/keyboard_symbols.json"
 import styled from "styled-components"
 
 export default function Keyboard() {
-    const sym0 = signs[0].symbol
-    const sym1 = signs[1].symbol
-    const sym2 = signs[2].symbol
-    const sym3 = signs[3].symbol
-    const sym4 = signs[4].symbol
-    const sym5 = signs[5].symbol
-    const sym6 = signs[6].symbol
-    const sym7 = signs[7].symbol
-    const sym8 = signs[8].symbol
-    const sym9 = signs[9].symbol
-    const sym10 = signs[10].symbol
-    const sym11 = signs[11].symbol
-    const sym12 = signs[12].symbol
-    const sym13 = signs[13].symbol
-    const sym14 = signs[14].symbol
-    const sym15 = signs[15].symbol
-    const sym16 = signs[16].symbol
-    const sym17 = signs[17].symbol
-    const sym18 = signs[18].symbol
-    const sym19 = signs[19].symbol
-    const sym20 = signs[20].symbol
-    const sym21 = signs[21].symbol
-    const sym22 = signs[22].symbol
-    const sym23 = signs[23].symbol
-    const sym24 = signs[24].symbol
-    const sym25 = signs[25].symbol
-    const sym26 = signs[26].symbol
-    const sym27 = signs[27].symbol
-
+    function renderLeftKeys() {
+        const leftSite = signs.splice(0, 14)
+        return leftSite.map(key => (
+            <KeysSideDiv key={key.symbol}>{key.symbol}</KeysSideDiv>
+        ))
+    }
+    function renderRightKeys() {
+        const rightSite = signs.splice(0, 14)
+        return rightSite.map(key => (
+            <KeysSideDiv key={key.symbol}>{key.symbol}</KeysSideDiv>
+        ))
+    }
     return (
-        <Fragment>
+        <>
             <KeysSide className="Result5">
-                {displayAllKeysOfOneSide(0, 9)}
+                {renderLeftKeys()}
 
                 {/* <KeysSideDiv>{sym1}</KeysSideDiv>
                 <KeysSideDiv>{sym2}</KeysSideDiv>
@@ -55,32 +38,9 @@ export default function Keyboard() {
                 <KeysMiddleDiv>g</KeysMiddleDiv>
                 <KeysMiddleDiv></KeysMiddleDiv>
                 <KeysMiddleDiv></KeysMiddleDiv>
-
-                {/* <div>{sym12}</div>
-                <div>{sym13}</div>
-                <div>{sym14}</div>
-                <div>{sym15}</div> */}
-
-                {/* <div>function</div>
-                <div>const</div>
-                <div>let</div>
-                <div>className</div> */}
             </KeysMiddle>
-            <KeysSide>
-                <KeysSideDiv>{sym16}</KeysSideDiv>
-                <KeysSideDiv>{sym17}</KeysSideDiv>
-                <KeysSideDiv>{sym18}</KeysSideDiv>
-                <KeysSideDiv>{sym19}</KeysSideDiv>
-                <KeysSideDiv>{sym20}</KeysSideDiv>
-                <KeysSideDiv>{sym21}</KeysSideDiv>
-                <KeysSideDiv>{sym22}</KeysSideDiv>
-                <KeysSideDiv>{sym23}</KeysSideDiv>
-                <KeysSideDiv>{sym24}</KeysSideDiv>
-                <KeysSideDiv>{sym25}</KeysSideDiv>
-                <KeysSideDiv>{sym26}</KeysSideDiv>
-                <KeysSideDiv>{sym27}</KeysSideDiv>
-            </KeysSide>
-        </Fragment>
+            <KeysSide>{renderRightKeys()}</KeysSide>
+        </>
     )
 }
 
@@ -99,7 +59,6 @@ function displayAllKeysOfOneSide(min, max) {
 }
 
 const KeysSide = styled.div`
-
     display: flex;
     flex-wrap: wrap;
     width: 35vw;
@@ -108,8 +67,6 @@ const KeysSide = styled.div`
     font-size: 1.5em;
     color: #566fad;
     text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
-
-}
 `
 const KeysSideDiv = styled.div`
     width: 33%;

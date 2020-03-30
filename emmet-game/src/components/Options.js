@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Options() {
     return (
-        <Fragment>
+        <>
             <header className="options">
                 <p>in-game navigation</p>
             </header>
@@ -12,6 +12,6 @@ export default function Options() {
             <section className="keybord">
                 <p>keybord</p>
             </section>
-        </Fragment>
+        </>
     )
 }

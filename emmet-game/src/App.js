@@ -16,31 +16,29 @@ const start_icon =
 
 export default function App() {
     return (
-        <>
-            <Main>
-                <Router>
-                    <NavigationStyled>
-                        <NavItemHome>
-                            <LinkStyled to="/">
-                                <img alt="" src={home_icon} />
-                            </LinkStyled>
-                        </NavItemHome>
-                        <NavItemMiddle></NavItemMiddle>
+        <Main>
+            <Router>
+                <NavigationStyled>
+                    <NavItemHome>
+                        <LinkStyled to="/">
+                            <img alt="" src={home_icon} />
+                        </LinkStyled>
+                    </NavItemHome>
+                    <NavItemMiddle></NavItemMiddle>
 
-                        <NavItemPlay>
-                            <LinkStyled2 to="/gamearea">
-                                <img alt="" src={start_icon} />
-                            </LinkStyled2>
-                        </NavItemPlay>
-                    </NavigationStyled>
+                    <NavItemPlay>
+                        <LinkStyled2 to="/gamearea">
+                            <img alt="" src={start_icon} />
+                        </LinkStyled2>
+                    </NavItemPlay>
+                </NavigationStyled>
 
-                    <Switch>
-                        <Route path="/" exact component={home} />
-                        <Route path="/gamearea" component={gamearea} />
-                    </Switch>
-                </Router>
-            </Main>
-        </>
+                <Switch>
+                    <Route path="/" exact component={home} />
+                    <Route path="/gamearea" component={gamearea} />
+                </Switch>
+            </Router>
+        </Main>
     )
 }
 

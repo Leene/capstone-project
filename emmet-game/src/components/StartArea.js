@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 import EmmetButton from "./EmmetListButton"
 import styled from "styled-components/macro"
 
@@ -6,15 +6,13 @@ const logo = "https://img.icons8.com/windows/128/453267/ant.png"
 
 export default function Startarea() {
     return (
-        <Fragment>
-            <StartareaMain>
-                <FirstHeadline>Emmet Typing Game</FirstHeadline>
-                <div classname="logo__startarea">
-                    <img alt="" src={logo} />
-                </div>
-                {EmmetButton("Emmetbefehle")}
-            </StartareaMain>
-        </Fragment>
+        <StartareaMain>
+            <FirstHeadline>Emmet Typing Game</FirstHeadline>
+            <div classname="logo__startarea">
+                <img alt="" src={logo} />
+            </div>
+            {EmmetButton("Emmetbefehle")}
+        </StartareaMain>
     )
 }
 

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 import "../css/Style.css"
 import GameInterface from "./GameInterface"
 import GameField from "./GameField"
@@ -7,15 +7,13 @@ import styled from "styled-components"
 
 export default function GameArea() {
     return (
-        <Fragment>
-            <Gamefield>
-                {GameField()}
-                <Gameinterface>
-                    {GameInterface()}
-                    <KeyboardStyle>{Keyboard()}</KeyboardStyle>
-                </Gameinterface>
-            </Gamefield>
-        </Fragment>
+        <Gamefield>
+            {GameField()}
+            <Gameinterface>
+                {GameInterface()}
+                <KeyboardStyle>{Keyboard()}</KeyboardStyle>
+            </Gameinterface>
+        </Gamefield>
     )
 }
 
