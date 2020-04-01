@@ -1,9 +1,9 @@
-import React from "react"
-import "../css/Style.css"
-import GameInterface from "./GameInterface"
-import GameField from "./GameField"
-import Keyboard from "./Keyboard"
-import styled from "styled-components"
+import React from 'react'
+import '../css/Style.css'
+import GameInterface from './GameInterface'
+import GameField from './GameField'
+import Keyboard from './Keyboard'
+import styled from 'styled-components'
 
 export default function GameArea() {
     return (
@@ -29,8 +29,8 @@ const Gamefield = styled.section`
 const Gameinterface = styled.div`
     display: grid;
     grid-template-areas:
-        "score middle life"
-        "keyboard keyboard keyboard";
+        'score middle life'
+        'keyboard keyboard keyboard';
     grid-template-rows: 1fr 5fr;
     grid-template-columns: 1fr 6fr 1fr;
     position: fixed;
@@ -48,8 +48,11 @@ const KeyboardStyle = styled.section`
     font-size: calc(10px + 2vmin);
     /* offset-x | offset-y | blur-radius | spread-radius | color */
     box-shadow: 2px 2px 5px 6px rgba(58, 32, 10, 0.2);
-
     & div {
+        background: rgba(75, 192, 215, 1) 9%;
+    }
+    & button {
+        border: 0;
         list-style: none;
         background: linear-gradient(
             45deg,

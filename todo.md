@@ -64,3 +64,12 @@ function display_array() {
     document.getElementById("Result").innerHTML = e
 }
 ```
+
+## Visualisierung der Branches in zsh
+
+-   `git log --graph --oneline --full-history --all`
+-   `git log --graph --full-history --all --pretty=format:"%h%x09%d%x20%s"`
+
+### Mit Farben in Bash:
+
+-   `git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h`
