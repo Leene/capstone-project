@@ -1,7 +1,8 @@
-import React from "react";
-import "../css/Style.css";
-import { signs } from "../data/keyboard_symbols.json";
-import styled from "styled-components";
+import React from 'react'
+import '../css/Style.css'
+import { signs } from '../data/keyboard_symbols.json'
+import { exercises } from '../data/exercises.json'
+import styled from 'styled-components'
 
 export default function Keyboard() {
 
@@ -16,7 +17,7 @@ export default function Keyboard() {
 
     return rightSite.map(key => (
       < KeysSideDiv
-        onClick={() => clickedKey()} key={key.symbol} >
+        onClick={() => clickedKey(key.symbol)} key={key.symbol} >
         {key.symbol}
       </KeysSideDiv >
     ))
@@ -27,7 +28,7 @@ export default function Keyboard() {
       <KeysSide >{renderLeftKeys()}</KeysSide>
       <KeysMiddle>
         <KeysMiddleDiv onClick={() => clickedKey("!!")} > html</KeysMiddleDiv>
-        <KeysMiddleDiv>lorem</KeysMiddleDiv>
+        <KeysMiddleDiv></KeysMiddleDiv>
         <KeysMiddleDiv>ipsum</KeysMiddleDiv>
         <KeysMiddleDiv>amet</KeysMiddleDiv>
       </KeysMiddle>
@@ -39,7 +40,10 @@ export default function Keyboard() {
 function clickedKey(symbol) {
   // e.preventDefault()
   console.log("symbol: " + symbol);
-  //console.log("symbol: " + symbol);
+  //symbol muss verglichen werden mit dem 
+  //was auf gamefield angezeigt wird
+
+
 }
 
 const KeysSide = styled.div`

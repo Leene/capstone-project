@@ -1,5 +1,4 @@
 import React from 'react'
-import '../css/Style.css'
 import GameInterface from './GameInterface'
 import GameField from './GameField'
 import Keyboard from './Keyboard'

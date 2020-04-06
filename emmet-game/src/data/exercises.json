@@ -1,0 +1,22 @@
+{
+    "exercises": [
+        {
+            "id": 1,
+            "name": "3 p-Tags",
+            "emmet": "p*3",
+            "result": "<p></p>\n<p></p>\n<p></p>"
+        },
+        {
+            "id": 2,
+            "name": "Lorem text with 5 words",
+            "emmet": "lorem5",
+            "result": "Lorem ipsum dolor sit amet."
+        },
+        {
+            "id": 3,
+            "name": "Lorem text with 3 words",
+            "emmet": "lorem8",
+            "result": "Lorem, ipsum dolor."
+        }
+    ]
+}
