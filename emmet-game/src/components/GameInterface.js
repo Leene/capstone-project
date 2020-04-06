@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { text } from "./GameField"
+
 const life = "https://img.icons8.com/material/20/ffffff/hearts--v1.png"
 // const life = "https://img.icons8.com/material/20/800080/hearts--v1.png"
 
@@ -8,10 +8,7 @@ const life = "https://img.icons8.com/material/20/ffffff/hearts--v1.png"
 
 
 export default function GameInterface() {
-    console.log(text)
-    // const hint = GameField().text
-    // const hint = getEmmetOfActiveExercise()
-    //  console.log("hint: " + hint)
+
     return (
         <>
             <Score>

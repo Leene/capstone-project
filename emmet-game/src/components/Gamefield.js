@@ -2,16 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { exercises } from '../data/exercises.json'
 
-export const text = "blöb"
 
 export default function GameField() {
-    const text = "blöb"
-    //export const text = "blöb"
-    //export const text = exercises[0].result
 
-    // const breaks = exercises[0].result
 
-    const newText = text.split('\n').map((item, i) => {
+    const newText = exercises[0].result.split('\n').map((item, i) => {
         // return <p key={i}>{item}</p>;
         return <span key={i}>{item}< br /></span>;
     });
@@ -55,10 +50,7 @@ export default function GameField() {
 
 
 }
-export default function getEmmetOfActiveExercise() {
-    text = exercises[0].result
-    return text
-}
+
 const Boxarea = styled.div`
     height: auto;
     width: 400;
