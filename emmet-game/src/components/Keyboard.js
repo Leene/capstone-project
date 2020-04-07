@@ -6,14 +6,19 @@ import styled from "styled-components";
 
 export default function Keyboard() {
   function renderLeftKeys() {
-    const leftSite = signs.splice(0, 12);
+    const leftSite = signs.slice(0, 12);
+    // console.log("signs: ");
+    // console.log(signs);
+
+    // console.log("leftSite: ");
+    // console.log(leftSite);
+
     return leftSite.map((key) => (
       <KeysSideDiv key={key.symbol}>{key.symbol}</KeysSideDiv>
     ));
   }
   function renderRightKeys() {
-    const rightSite = signs.splice(0, 12);
-
+    const rightSite = signs.slice(12, 24);
     return rightSite.map((key) => (
       <KeysSideDiv onClick={() => clickedKey(key.symbol)} key={key.symbol}>
         {key.symbol}
