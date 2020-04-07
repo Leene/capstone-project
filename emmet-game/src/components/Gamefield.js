@@ -1,26 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
 import { exercises } from '../data/exercises.json'
+import CreateOrder from "./CreateOrder";
 
 
 export default function GameField() {
+    let order = CreateOrder();
 
+    const newText = exercises[order[0]].result.split('\n').map((item, i) => {
+        // return <p key={i}>{item}</p>;
+        return <span key={i}>{item}< br /></span>;
+    });
+    //console.log(typeof newText)
 
-    const newText = exercises[0].result.split('\n').map((item, i) => {
+    const newText1 = exercises[order[1]].result.split('\n').map((item, i) => {
         // return <p key={i}>{item}</p>;
         return <span key={i}>{item}< br /></span>;
     });
 
-    const newText1 = exercises[1].result.split('\n').map((item, i) => {
+    const newText2 = exercises[order[2]].result.split('\n').map((item, i) => {
         // return <p key={i}>{item}</p>;
         return <span key={i}>{item}< br /></span>;
     });
-
-    const newText2 = exercises[2].result.split('\n').map((item, i) => {
-        // return <p key={i}>{item}</p>;
-        return <span key={i}>{item}< br /></span>;
-    });
-
 
     return (
         <Boxarea>

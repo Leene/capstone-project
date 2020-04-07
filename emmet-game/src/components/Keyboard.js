@@ -1,33 +1,30 @@
-import React from 'react'
-import '../css/Style.css'
-import { signs } from '../data/keyboard_symbols.json'
-import { exercises } from '../data/exercises.json'
-import styled from 'styled-components'
+import React from "react";
+import "../css/Style.css";
+import { signs } from "../data/keyboard_symbols.json";
+import { exercises } from "../data/exercises.json";
+import styled from "styled-components";
 
 export default function Keyboard() {
-
   function renderLeftKeys() {
     const leftSite = signs.splice(0, 12);
-    return leftSite.map(key => (
+    return leftSite.map((key) => (
       <KeysSideDiv key={key.symbol}>{key.symbol}</KeysSideDiv>
-    ))
+    ));
   }
   function renderRightKeys() {
     const rightSite = signs.splice(0, 12);
 
-    return rightSite.map(key => (
-      < KeysSideDiv
-        onClick={() => clickedKey(key.symbol)} key={key.symbol} >
+    return rightSite.map((key) => (
+      <KeysSideDiv onClick={() => clickedKey(key.symbol)} key={key.symbol}>
         {key.symbol}
-      </KeysSideDiv >
-    ))
+      </KeysSideDiv>
+    ));
   }
-
   return (
     <>
-      <KeysSide >{renderLeftKeys()}</KeysSide>
+      <KeysSide>{renderLeftKeys()}</KeysSide>
       <KeysMiddle>
-        <KeysMiddleDiv onClick={() => clickedKey("!!")} > html</KeysMiddleDiv>
+        <KeysMiddleDiv onClick={() => clickedKey("!!")}> html</KeysMiddleDiv>
         <KeysMiddleDiv></KeysMiddleDiv>
         <KeysMiddleDiv>ipsum</KeysMiddleDiv>
         <KeysMiddleDiv>amet</KeysMiddleDiv>
@@ -40,10 +37,8 @@ export default function Keyboard() {
 function clickedKey(symbol) {
   // e.preventDefault()
   console.log("symbol: " + symbol);
-  //symbol muss verglichen werden mit dem 
+  //symbol muss verglichen werden mit dem
   //was auf gamefield angezeigt wird
-
-
 }
 
 const KeysSide = styled.div`
@@ -63,6 +58,7 @@ const KeysSideDiv = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+
   &:active {
     color: #f2fcfd;
     background: linear-gradient(
