@@ -3,15 +3,12 @@ import "../css/Style.css";
 import { signs } from "../data/keyboard_symbols.json";
 import { exercises } from "../data/exercises.json";
 import styled from "styled-components";
+import TextArea from "./TextArea";
 
+const key = "";
 export default function Keyboard() {
   function renderLeftKeys() {
     const leftSite = signs.slice(0, 12);
-    // console.log("signs: ");
-    // console.log(signs);
-
-    // console.log("leftSite: ");
-    // console.log(leftSite);
 
     return leftSite.map((key) => (
       <KeysSideDiv key={key.symbol}>{key.symbol}</KeysSideDiv>
@@ -29,7 +26,8 @@ export default function Keyboard() {
     <>
       <KeysSide>{renderLeftKeys()}</KeysSide>
       <KeysMiddle>
-        <KeysMiddleDiv onClick={() => clickedKey("!!")}> html</KeysMiddleDiv>
+        {/* <KeysMiddleDiv onClick={() => clickedKey("!!")}> html</KeysMiddleDiv> */}
+        <KeysMiddleDiv onClick={() => TextArea("##")}> html</KeysMiddleDiv>
         <KeysMiddleDiv></KeysMiddleDiv>
         <KeysMiddleDiv>ipsum</KeysMiddleDiv>
         <KeysMiddleDiv>amet</KeysMiddleDiv>
@@ -38,12 +36,23 @@ export default function Keyboard() {
     </>
   );
 }
-
-function clickedKey(symbol) {
+export const typedText = [];
+export function clickedKey(symbol) {
   // e.preventDefault()
-  console.log("symbol: " + symbol);
+  typedText.push(symbol);
+  console.log("symbol: " + symbol + "typedText: ");
+  console.log(typedText);
   //symbol muss verglichen werden mit dem
   //was auf gamefield angezeigt wird
+
+  // return typedText;
+
+  //TextArea()
+}
+
+export function getTypedText() {
+  console.log("getTypedText: " + typedText);
+  return typedText;
 }
 
 const KeysSide = styled.div`
