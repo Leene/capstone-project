@@ -1,0 +1,40 @@
+{
+    "exercises": [
+        {
+            "id": 1,
+            "name": "3 p-Tags",
+            "emmet": "p*3",
+            "result": "<p></p>\n<p></p>\n<p></p>"
+        },
+        {
+            "id": 2,
+            "name": "Lorem text with 5 words",
+            "emmet": "lorem5",
+            "result": "2Lorem ipsum dolor sit amet."
+        },
+        {
+            "id": 3,
+            "name": "Lorem text with 3 words",
+            "emmet": "3lorem8",
+            "result": "3Lorem, ipsum dolor."
+        },
+        {
+            "id": 4,
+            "name": "Lorem text with 3 words",
+            "emmet": "4lorem8",
+            "result": "4Lorem, ipsum dolor."
+        },
+        {
+            "id": 5,
+            "name": "Lorem text with 3 words",
+            "emmet": "5lorem8",
+            "result": "5Lorem, ipsum dolor."
+        },
+        {
+            "id": 6,
+            "name": "möp with 3 words",
+            "emmet": "6lorem8",
+            "result": "6Lorem, ipsum dolor."
+        }
+    ]
+}

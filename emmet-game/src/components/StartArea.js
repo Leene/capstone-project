@@ -8,7 +8,7 @@ export default function Startarea() {
     return (
         <StartareaMain>
             <FirstHeadline>Emmet Typing Game</FirstHeadline>
-            <div classname="logo__startarea">
+            <div className="logo__startarea">
                 <img alt="" src={logo} />
             </div>
             {EmmetButton("Emmetbefehle")}
