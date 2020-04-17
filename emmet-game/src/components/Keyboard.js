@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/Style.css";
 import { signs } from "../data/keyboard_symbols.json";
 import { exercises } from "../data/exercises.json";
@@ -6,29 +6,59 @@ import styled from "styled-components";
 import TextArea from "./TextArea";
 
 const key = "";
-export default function Keyboard() {
+export default function Keyboard(counter, setCounter) {
+  ///////////
+  const btnText = "&";
+  const btnText2 = "$";
+
+  //const [counter, setCounter] = useState("0");
+
+  function handleClick2() {
+    setCounter(counter + btnText);
+    console.log("clicked 2");
+  }
+
+  /////////
+
   function renderLeftKeys() {
     const leftSite = signs.slice(0, 12);
 
     return leftSite.map((key) => (
-      <KeysSideDiv key={key.symbol}>{key.symbol}</KeysSideDiv>
+      <KeysSideDiv onClick={() => handleClick(key.symbol)} key={key.symbol}>
+        {key.symbol}
+      </KeysSideDiv>
     ));
   }
   function renderRightKeys() {
     const rightSite = signs.slice(12, 24);
     return rightSite.map((key) => (
-      <KeysSideDiv onClick={() => clickedKey(key.symbol)} key={key.symbol}>
+      // <KeysSideDiv onClick={() => clickedKey(key.symbol)} key={key.symbol}>
+      <KeysSideDiv onClick={() => handleClick(key.symbol)} key={key.symbol}>
         {key.symbol}
       </KeysSideDiv>
     ));
   }
+  const handleClick = (symbol) => {
+    if (counter === "Welcher Emmet-Befehl passt?") {
+      setCounter(" ");
+      setCounter(symbol);
+    } else if (counter === "Deine neue Eingabe ...") {
+      setCounter(" ");
+      setCounter(symbol);
+    } else {
+      setCounter(counter + symbol);
+    }
+    console.log("clicked");
+  };
   return (
     <>
       <KeysSide>{renderLeftKeys()}</KeysSide>
       <KeysMiddle>
         {/* <KeysMiddleDiv onClick={() => clickedKey("!!")}> html</KeysMiddleDiv> */}
-        <KeysMiddleDiv onClick={() => TextArea("##")}> html</KeysMiddleDiv>
-        <KeysMiddleDiv></KeysMiddleDiv>
+        <KeysMiddleDiv onClick={() => handleClick("html")}> html</KeysMiddleDiv>
+        <KeysMiddleDiv onClick={() => handleClick(btnText2)}>
+          {btnText2}
+        </KeysMiddleDiv>
         <KeysMiddleDiv>ipsum</KeysMiddleDiv>
         <KeysMiddleDiv>amet</KeysMiddleDiv>
       </KeysMiddle>
@@ -81,7 +111,7 @@ const KeysSideDiv = styled.button`
       rgb(220, 236, 255) 10%
     );
     box-shadow: 2px 2px 5px 6px rgba(58, 32, 10, 0.2);
-    margin-top: -2em;
+    // margin-top: -2em;
   }
 `;
 

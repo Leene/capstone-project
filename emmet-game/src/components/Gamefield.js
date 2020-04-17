@@ -5,7 +5,7 @@ import CreateOrder from "./CreateOrder";
 import TextArea from "./TextArea";
 import { clickedKey, getTypedText, typedText } from "./Keyboard";
 
-export default function GameField() {
+export default function GameField(counter, setCounter) {
   let order = CreateOrder();
 
   const newText = exercises[order[0]].result.split("\n").map((item, i) => {
@@ -45,7 +45,7 @@ export default function GameField() {
         <Textbox>
           <code>{newText}</code>
         </Textbox>
-        {TextArea(getTypedText())}
+        {TextArea(getTypedText(), counter, setCounter)}
       </Box>
       <Box>
         <Textbox>

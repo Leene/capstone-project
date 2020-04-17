@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import GameInterface from "./GameInterface";
 import GameField from "./GameField";
 import Keyboard from "./Keyboard";
 import styled from "styled-components";
 
 export default function GameArea() {
+  const [counter, setCounter] = useState("Welcher Emmet-Befehl passt?");
+
   return (
     <Gamefield>
-      {GameField()}
+      {GameField(counter, setCounter)}
       <Gameinterface>
         {GameInterface()}
-        <KeyboardStyle>{Keyboard()}</KeyboardStyle>
+        <KeyboardStyle>{Keyboard(counter, setCounter)}</KeyboardStyle>
       </Gameinterface>
     </Gamefield>
   );
