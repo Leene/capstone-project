@@ -6,7 +6,7 @@ import styled from "styled-components";
 import TextArea from "./TextArea";
 
 const key = "";
-export default function Keyboard(counter, setCounter) {
+export default function Keyboard(inputText, setInputText) {
   ///////////
   const btnText = "&";
   const btnText2 = "$";
@@ -14,7 +14,7 @@ export default function Keyboard(counter, setCounter) {
   //const [counter, setCounter] = useState("0");
 
   function handleClick2() {
-    setCounter(counter + btnText);
+    setInputText(inputText + btnText);
     console.log("clicked 2");
   }
 
@@ -39,14 +39,14 @@ export default function Keyboard(counter, setCounter) {
     ));
   }
   const handleClick = (symbol) => {
-    if (counter === "Welcher Emmet-Befehl passt?") {
-      setCounter(" ");
-      setCounter(symbol);
-    } else if (counter === "Deine neue Eingabe ...") {
-      setCounter(" ");
-      setCounter(symbol);
+    if (inputText === "Welcher Emmet-Befehl passt?") {
+      setInputText(" ");
+      setInputText(symbol);
+    } else if (inputText === "Deine neue Eingabe ...") {
+      setInputText(" ");
+      setInputText(symbol);
     } else {
-      setCounter(counter + symbol);
+      setInputText(inputText + symbol);
     }
     console.log("clicked");
   };

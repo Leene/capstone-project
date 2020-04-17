@@ -5,37 +5,37 @@ import CreateOrder from "./CreateOrder";
 import { clickedKey, getTypedText, typedText } from "./Keyboard";
 
 let noteText = getTypedText();
-export default function TextArea(noteText, counter, setCounter) {
+export default function TextArea(noteText, inputText, setInputText) {
   const btnDeleteText = "X";
   const btnInputText = "OK";
   const btnText2 = "$";
 
   const handleClick = () => {
-    if (counter === "Welcher Emmet-Befehl passt?") {
-      setCounter(" ");
-      setCounter(btnInputText);
-    } else if (counter === "Deine neue Eingabe ...") {
-      setCounter(" ");
-      setCounter(btnInputText);
+    if (inputText === "Welcher Emmet-Befehl passt?") {
+      setInputText(" ");
+      setInputText(btnInputText);
+    } else if (inputText === "Deine neue Eingabe ...") {
+      setInputText(" ");
+      setInputText(btnInputText);
     } else {
-      setCounter(counter + btnInputText);
+      setInputText(inputText + btnInputText);
     }
 
     console.log("clicked");
   };
 
   const handleDeleteBtnClick = () => {
-    setCounter("Deine neue Eingabe ...");
+    setInputText("Deine neue Eingabe ...");
     console.log("Delete is clicked");
   };
 
   console.log("noteText: " + noteText);
 
-  console.log("rendering...", counter);
+  console.log("rendering...", inputText);
 
   return (
     <>
-      <Textarea>{counter}</Textarea>
+      <Textarea>{inputText}</Textarea>
       <button onClick={handleDeleteBtnClick}>{btnDeleteText}</button>
       <button onClick={handleClick}>{btnInputText}</button>
     </>

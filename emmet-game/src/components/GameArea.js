@@ -5,14 +5,14 @@ import Keyboard from "./Keyboard";
 import styled from "styled-components";
 
 export default function GameArea() {
-  const [counter, setCounter] = useState("Welcher Emmet-Befehl passt?");
+  const [inputText, setInputText] = useState("Welcher Emmet-Befehl passt?");
 
   return (
     <Gamefield>
-      {GameField(counter, setCounter)}
+      {GameField(inputText, setInputText)}
       <Gameinterface>
         {GameInterface()}
-        <KeyboardStyle>{Keyboard(counter, setCounter)}</KeyboardStyle>
+        <KeyboardStyle>{Keyboard(inputText, setInputText)}</KeyboardStyle>
       </Gameinterface>
     </Gamefield>
   );
