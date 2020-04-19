@@ -44,6 +44,7 @@ export default function TextArea(noteText, inputText, setInputText) {
 
 const Textarea = styled.div`
   contenteditable: true;
+  overflow-wrap: break-word;
   color: white;
   font-weight: bold;
   width: 96%;

@@ -54,14 +54,14 @@ export default function GameField(inputText, setInputText) {
 const Boxarea = styled.div`
   border: solid 1px pink;
   height: auto;
-  width: 400;
+  width: auto;
   margin-top: 20vh;
 `;
 
 const Box = styled.div`
   background-color: rgba(255, 255, 255, 0.338);
   height: auto;
-  width: 300px;
+  width: 80vw;
   margin: 0 0 20px 0;
   border-radius: 1rem;
   box-shadow: 2px 2px 5px 6px rgba(58, 32, 10, 0.1);
