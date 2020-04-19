@@ -38,6 +38,11 @@ export default function Keyboard(inputText, setInputText) {
       </KeysSideDiv>
     ));
   }
+
+  function renderMiddleKeys() {
+    console.log("exercises: " + exercises[0].btntext[0]);
+  }
+
   const handleClick = (symbol) => {
     if (inputText === "Welcher Emmet-Befehl passt?") {
       setInputText(" ");
@@ -59,7 +64,8 @@ export default function Keyboard(inputText, setInputText) {
         <KeysMiddleDiv onClick={() => handleClick(btnText2)}>
           {btnText2}
         </KeysMiddleDiv>
-        <KeysMiddleDiv>ipsum</KeysMiddleDiv>
+        <KeysMiddleDiv>{renderMiddleKeys()}</KeysMiddleDiv>
+        <KeysMiddleDiv>amet</KeysMiddleDiv>
         <KeysMiddleDiv>amet</KeysMiddleDiv>
       </KeysMiddle>
       <KeysSide>{renderRightKeys()}</KeysSide>
@@ -118,6 +124,8 @@ const KeysSideDiv = styled.button`
 //  color: #f2fcfd;
 const KeysMiddle = styled.div`
   width: 30%;
+  overflow: scroll;
+  overscroll-behavior: none;
 `;
 
 const KeysMiddleDiv = styled.button`
