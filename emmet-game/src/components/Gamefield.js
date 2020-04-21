@@ -5,7 +5,7 @@ import CreateOrder from "./CreateOrder";
 import TextArea from "./TextArea";
 import { clickedKey, getTypedText, typedText } from "./Keyboard";
 
-export default function GameField(inputText, setInputText) {
+export default function GameField(inputText, setInputText, hint) {
   let order = CreateOrder();
 
   const newText = exercises[order[0]].result.split("\n").map((item, i) => {
@@ -19,33 +19,13 @@ export default function GameField(inputText, setInputText) {
   });
   //console.log(typeof newText)
 
-  const newText1 = exercises[order[1]].result.split("\n").map((item, i) => {
-    // return <p key={i}>{item}</p>;
-    return (
-      <span key={i}>
-        {item}
-        <br />
-      </span>
-    );
-  });
-
-  const newText2 = exercises[order[2]].result.split("\n").map((item, i) => {
-    // return <p key={i}>{item}</p>;
-    return (
-      <span key={i}>
-        {item}
-        <br />
-      </span>
-    );
-  });
-
   return (
     <Boxarea>
       <Box>
         <Textbox>
           <code>{newText}</code>
         </Textbox>
-        {TextArea(getTypedText(), inputText, setInputText)}
+        {TextArea(getTypedText(), inputText, setInputText, hint)}
       </Box>
     </Boxarea>
   );

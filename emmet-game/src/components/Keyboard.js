@@ -3,35 +3,23 @@ import "../css/Style.css";
 import { signs } from "../data/keyboard_symbols.json";
 import { exercises } from "../data/exercises.json";
 import styled from "styled-components";
-import TextArea from "./TextArea";
 
-const key = "";
-export default function Keyboard(inputText, setInputText) {
-  ///////////
-  const btnText = "&";
-  const btnText2 = "$";
-
+export default function Keyboard(inputText, setInputText, order) {
   //const [counter, setCounter] = useState("0");
 
-  function handleClick2() {
-    setInputText(inputText + btnText);
-    console.log("clicked 2");
-  }
-
-  /////////
-
   function renderLeftKeys() {
-    const leftSite = signs.slice(0, 12);
+    const leftSide = signs.slice(0, 12);
 
-    return leftSite.map((key) => (
+    return leftSide.map((key) => (
       <KeysSideDiv onClick={() => handleClick(key.symbol)} key={key.symbol}>
         {key.symbol}
       </KeysSideDiv>
     ));
   }
   function renderRightKeys() {
-    const rightSite = signs.slice(12, 24);
-    return rightSite.map((key) => (
+    const rightSide = signs.slice(12, 24);
+    console.log("rightSide: " + rightSide);
+    return rightSide.map((key) => (
       // <KeysSideDiv onClick={() => clickedKey(key.symbol)} key={key.symbol}>
       <KeysSideDiv onClick={() => handleClick(key.symbol)} key={key.symbol}>
         {key.symbol}
@@ -39,8 +27,22 @@ export default function Keyboard(inputText, setInputText) {
     ));
   }
 
+  //let btnTextArray = exercises[order[0]].btntext;
+  let btnTextArray = exercises[4].btntext;
+  console.log("btnTextArray" + btnTextArray);
+  //const [middleBtnText, setMiddleBtnText] = useState(false);
+
   function renderMiddleKeys() {
-    console.log("exercises: " + exercises[0].btntext[0]);
+    console.log("exercises: " + exercises[4].btntext);
+
+    const middleSide = exercises[order[0]].btntext;
+    console.log("middleSide: " + middleSide);
+
+    return middleSide.map((key) => (
+      <KeysMiddleDiv onClick={() => handleClick(key)} key={key}>
+        {key}
+      </KeysMiddleDiv>
+    ));
   }
 
   const handleClick = (symbol) => {
@@ -58,16 +60,7 @@ export default function Keyboard(inputText, setInputText) {
   return (
     <>
       <KeysSide>{renderLeftKeys()}</KeysSide>
-      <KeysMiddle>
-        {/* <KeysMiddleDiv onClick={() => clickedKey("!!")}> html</KeysMiddleDiv> */}
-        <KeysMiddleDiv onClick={() => handleClick("html")}> html</KeysMiddleDiv>
-        <KeysMiddleDiv onClick={() => handleClick(btnText2)}>
-          {btnText2}
-        </KeysMiddleDiv>
-        <KeysMiddleDiv>{renderMiddleKeys()}</KeysMiddleDiv>
-        <KeysMiddleDiv>amet</KeysMiddleDiv>
-        <KeysMiddleDiv>amet</KeysMiddleDiv>
-      </KeysMiddle>
+      <KeysMiddle>{renderMiddleKeys()}</KeysMiddle>
       <KeysSide>{renderRightKeys()}</KeysSide>
     </>
   );

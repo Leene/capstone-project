@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { exercises } from "../data/exercises.json";
 import CreateOrder from "./CreateOrder";
+import CreateScore from "./CreateScore";
 
 const life = "https://img.icons8.com/material/20/ffffff/hearts--v1.png";
 // const life = "https://img.icons8.com/material/20/800080/hearts--v1.png"
 
-export default function GameInterface() {
-  let order = CreateOrder();
-  let hint = exercises[order[0]].emmet;
+export default function GameInterface(hint, inputText, setInputText, score) {
+  // let order = CreateOrder();
+  // let hint = exercises[order[0]].emmet;
   console.log("HINT" + hint);
   const [showText, setShowText] = useState(false);
 
@@ -17,7 +18,7 @@ export default function GameInterface() {
   return (
     <>
       <Score>
-        <p>260</p>
+        <p>{score}</p>
       </Score>
       <Hint>
         <HintButton onClick={() => setShowText(!showText)}>HINT:</HintButton>

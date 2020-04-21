@@ -2,24 +2,29 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { exercises } from "../data/exercises.json";
 import CreateOrder from "./CreateOrder";
+import CreateScore from "./CreateScore";
+
 import { clickedKey, getTypedText, typedText } from "./Keyboard";
 
 let noteText = getTypedText();
-export default function TextArea(noteText, inputText, setInputText) {
+export default function TextArea(noteText, inputText, setInputText, hint) {
   const btnDeleteText = "X";
   const btnInputText = "OK";
   const btnText2 = "$";
 
   const handleClick = () => {
-    if (inputText === "Welcher Emmet-Befehl passt?") {
-      setInputText(" ");
-      setInputText(btnInputText);
-    } else if (inputText === "Deine neue Eingabe ...") {
-      setInputText(" ");
-      setInputText(btnInputText);
-    } else {
-      setInputText(inputText + btnInputText);
-    }
+    CreateScore(inputText, hint);
+
+    // const handleClick = () => {
+    //   if (inputText === "Welcher Emmet-Befehl passt?") {
+    //     setInputText(" ");
+    //     setInputText(btnInputText);
+    //   } else if (inputText === "Deine neue Eingabe ...") {
+    //     setInputText(" ");
+    //     setInputText(btnInputText);
+    //   } else {
+    //     setInputText(inputText + btnInputText);
+    //   }
 
     console.log("clicked");
   };
@@ -48,9 +53,9 @@ const Textarea = styled.div`
   color: white;
   font-weight: bold;
   width: 96%;
-  border: none;
+
   background-color: #393c8060;
   padding: 1vw 2vw 2vw 2vw;
-  margin: 1vw 2vw 0 0;
+  margin: 1vw 1vw 3px 8px;
   // resize: none;
 `;
