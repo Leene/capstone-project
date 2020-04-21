@@ -3,16 +3,24 @@ import GameInterface from "./GameInterface";
 import GameField from "./GameField";
 import Keyboard from "./Keyboard";
 import styled from "styled-components";
+import { exercises } from "../data/exercises.json";
+import CreateOrder from "./CreateOrder";
 
 export default function GameArea() {
   const [inputText, setInputText] = useState("Welcher Emmet-Befehl passt?");
+  const [scoreState, setScoreState] = useState(0);
+
+  let order = CreateOrder();
+  let hint = exercises[order[0]].emmet;
 
   return (
     <Gamefield>
-      {GameField(inputText, setInputText)}
+      {GameField(inputText, setInputText, hint)}
       <Gameinterface>
-        {GameInterface()}
-        <KeyboardStyle>{Keyboard(inputText, setInputText)}</KeyboardStyle>
+        {GameInterface(hint, inputText, setInputText, scoreState)}
+        <KeyboardStyle>
+          {Keyboard(inputText, setInputText, order)}
+        </KeyboardStyle>
       </Gameinterface>
     </Gamefield>
   );
