@@ -1,3 +1,5 @@
+`cd /e/neuefische2020/capstone-project`
+
 ### Allgemeines Projekt setup mit git, parcel und co
 
 -   Repo erstellen, clonen
