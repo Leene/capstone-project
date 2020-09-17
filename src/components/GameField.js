@@ -32,7 +32,7 @@ export default function GameField(inputText, setInputText, hint) {
 }
 
 const Boxarea = styled.div`
-  border: solid 1px pink;
+ // border: solid 1px pink;
   height: auto;
   width: auto;
   margin-top: 20vh;

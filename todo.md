@@ -2,7 +2,7 @@
 
 -   Repo erstellen, clonen
 -   `npm init`
--   `npm i parcel-bundler`
+-   `npm i parcel-bundler` (unter win7 probleme mit parcel Bundler, bei React App ist das eh unnötig)
 -   Start script in package.json: "start": `parcel -d docs index.html` bzw. `"parcel --no-cache src/index.html --open"`
 -   Build script in package.json: "build": `parcel build -d docs --public-url=./ index.html`
 -   `index.html` und `styles.scss` erstellen, verlinken per <link rel="stylesheet" href="styles.scss">
