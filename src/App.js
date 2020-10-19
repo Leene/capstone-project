@@ -1,127 +1,89 @@
-import React from "react"
-import {
-    BrowserRouter as Router,
-    Route,
-    NavLink,
-    Switch,
-} from "react-router-dom"
+import React from 'react'
+import styled from 'styled-components'
+import { Router, Link } from '@reach/router'
 
-import styled from "styled-components/macro"
-import GameArea from "./components/GameArea"
-import StartArea from "./components/StartArea"
+
+import { COLORS } from './constants';
+
+import GameArea from './components/GameArea'
+import Home from './components/Home'
+import Details from './components/Details'
+// import GlobalStyles from './components/GlobalStyles'
+
+
+
 
 const home_icon = "https://img.icons8.com/material-rounded/24/ffffff/home.png"
 const start_icon =
     "https://img.icons8.com/ios-filled/24/ffffff/circled-play.png"
 
 export default function App() {
-    return (
-        <Main>
-            <Router>
-                <NavigationStyled>
-                    <NavItemHome>
-                        <LinkStyled to="/">
-                            <img alt="" src={home_icon} />
-                        </LinkStyled>
-                    </NavItemHome>
-                    <NavItemMiddle></NavItemMiddle>
+  return (
 
-                    <NavItemPlay>
-                        <LinkStyled2 to="/gamearea">
-                            <img alt="" src={start_icon} />
-                        </LinkStyled2>
-                    </NavItemPlay>
-                </NavigationStyled>
-
-                <Switch>
-                    <Route path="/" exact component={home} />
-                    <Route path="/gamearea" component={gamearea} />
-                </Switch>
-            </Router>
-        </Main>
-    )
+    <Main> 
+        <Header>
+            <LinkStyled to ="/">
+                <NavButton><img alt="" src={home_icon} /></NavButton>
+                </LinkStyled>
+            <Title>Emmet Typing Game</Title>
+            <LinkStyled to ="/gamearea">
+                <NavButton><img alt="" src={start_icon} /></NavButton>
+            </LinkStyled>
+          </Header>
+        <Router>
+          <Home path= "/"></Home>
+          <GameArea path= "/gamearea/"></GameArea>
+          <Details path= "/details/"></Details>
+           {/* <GameArea path= "/gamearea/:id"></GameArea> */}
+        </Router>
+    </Main>
+  );
 }
 
-const home = () => StartArea()
 
-const gamearea = () => GameArea()
-
-const Main = styled.main`
+ const Main = styled.main`
+ 
     background: linear-gradient(
         0deg,
-        rgba(75, 192, 215, 1) 9%,
-        rgba(92, 45, 253, 1) 100%
+        ${COLORS.background1} 9%,
+        ${COLORS.background2} 100%
     );
     height: 100vh;
-    width: 100vw;
     font-size: calc(10px + 2vmin);
-    color: #555;
+    color: #555;  
+
 `
 
-const LinkStyled2 = styled(NavLink)`
-    flex-grow: 1;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: gray;
-    height: 120%;
-    border-radius: 0 0 0 100px;
 
-    /* offset-x | offset-y | blur-radius | spread-radius | color */
-    box-shadow: 0px 0px 4px 3px rgba(32, 13, 94, 0.2);
+const Header = styled.header`
+  display: flex;
+justify-content: space-between;
 
-    &.active {
-        background: purple;
-    }
-`
-const LinkStyled = styled(NavLink)`
-    flex-grow: 1;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: gray;
-    height: 120%;
-    border-radius: 0 0 100px 0;
-
-    /* offset-x | offset-y | blur-radius | spread-radius | color */
-    box-shadow: 0px 0px 4px 3px rgba(32, 13, 94, 0.2);
-
-    &:active {
-        background: purple;
-    }
 `
 
-const NavigationStyled = styled.nav`
-    display: grid;
-    grid-template-areas: "home middle play";
-    grid-template-rows: 40px;
-    grid-template-columns: 1fr 4fr 1fr;
-    text-align: center;
-`
-//     display: grid;
-//     grid-auto-flow: column;
-//     gap: 1px;
-
-const NavItemHome = styled.div`
-    grid-area: home;
-
-    & img {
-        margin: -5px 0 0 -10px;
-    }
+// "display: flex;" bei Link verhindert das Verrutschen der NavButtons beim Ändern der Fenstergröße:
+const LinkStyled = styled(Link)`
+  display: flex; 
 `
 
-const NavItemMiddle = styled.div`
-    grid-area: title;
+const Title = styled.h1`
+
+  height: 5rem;
+  text-align: center;
+  margin-top:2px;
+  font-size: 20px;
+  color:${COLORS.lightText}; 
+  opacity:0.6;
 `
 
-const NavItemPlay = styled.div`
-    grid-area: play;
-
-    & img {
-        margin: -5px -10px 0 0;
-    }
+const Button = styled.button`
+  text-align: left;
+ 
+`
+const NavButton = styled.button`
+background-color: ${COLORS.secondary};
+height: 3em;
+border:none;
+border-radius: 0 0 100px 100px;
+box-shadow: 2px 2px 5px 6px rgba(58, 32, 10, 0.2);
 `
