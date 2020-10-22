@@ -81,6 +81,7 @@ export function clickedKey(symbol) {
 
 export function getTypedText() {
   console.log("getTypedText: " + typedText);
+  
   return typedText;
 }
 
