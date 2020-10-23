@@ -40,9 +40,9 @@ const newText = exercises[order[0]].result.split("\n").map((item, i) => {
       </Box>
     </Boxarea>
       <Gameinterface>
-        {GameInterface(hint, inputText, setInputText, scoreState)}
+        <GameInterface hint={hint} inputText={inputText} setInputText={setInputText} scoreState={scoreState}/>
         <KeyboardStyle>
-          {Keyboard(inputText, setInputText, order)}
+          <Keyboard inputText={inputText} setInputText={setInputText} order={order}/>
         </KeyboardStyle>
       </Gameinterface>
     </Gamefield>

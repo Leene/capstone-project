@@ -7,6 +7,7 @@ import CreateScore from "./CreateScore";
 import { clickedKey, getTypedText, typedText } from "./Keyboard";
 
 let noteText = getTypedText();
+
 export default function TextArea(noteText, inputText, setInputText, hint) {
   const btnDeleteText = "X";
   const btnInputText = "OK";

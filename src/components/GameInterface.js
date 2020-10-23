@@ -7,7 +7,9 @@ import CreateScore from "./CreateScore";
 const life = "https://img.icons8.com/material/20/ffffff/hearts--v1.png";
 // const life = "https://img.icons8.com/material/20/800080/hearts--v1.png"
 
-export default function GameInterface(hint, inputText, setInputText, score) {
+export default function GameInterface(props) {
+  const {hint, inputText, setInputText, scoreState} = props
+  
   // let order = CreateOrder();
   // let hint = exercises[order[0]].emmet;
   console.log("HINT" + hint);
@@ -18,11 +20,11 @@ export default function GameInterface(hint, inputText, setInputText, score) {
   return (
     <>
       <Score>
-        <p>{score}</p>
+        <p>{props.scoreState}</p>
       </Score>
       <Hint>
         <HintButton onClick={() => setShowText(!showText)}>HINT:</HintButton>
-        <HintTextDiv>{showText && <HintText>{hint}</HintText>}</HintTextDiv>
+        <HintTextDiv>{showText && <HintText>{props.hint}</HintText>}</HintTextDiv>
       </Hint>
       <Life>
         <LifeIcon alt="" src={life} />
