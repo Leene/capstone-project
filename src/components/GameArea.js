@@ -24,7 +24,7 @@ const newText = exercises[order[0]].result.split("\n").map((item, i) => {
     </span>
   );
 });
-//console.log(typeof newText)
+
 
 /////////////////////////
 
@@ -36,7 +36,8 @@ const newText = exercises[order[0]].result.split("\n").map((item, i) => {
         <Textbox>
           <code>{newText}</code>
         </Textbox>
-        {TextArea(getTypedText(), inputText, setInputText, hint)}
+        <TextArea hint={hint} inputText={inputText} setInputText={setInputText} />
+        {/* {TextArea(getTypedText(), inputText, setInputText, hint)} */}
       </Box>
     </Boxarea>
       <Gameinterface>

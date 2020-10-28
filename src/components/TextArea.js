@@ -4,28 +4,17 @@ import { exercises } from "../data/exercises.json";
 import CreateOrder from "./CreateOrder";
 import CreateScore from "./CreateScore";
 
-import { clickedKey, getTypedText, typedText } from "./Keyboard";
 
-let noteText = getTypedText();
+export default function TextArea(props) {
+//export default function TextArea(noteText, inputText, setInputText, hint) {
+  const {hint, inputText, setInputText} = props  
 
-export default function TextArea(noteText, inputText, setInputText, hint) {
-  const btnDeleteText = "X";
+const btnDeleteText = "X";
   const btnInputText = "OK";
-  const btnText2 = "$";
+
 
   const handleClick = () => {
     CreateScore(inputText, hint);
-
-    // const handleClick = () => {
-    //   if (inputText === "Welcher Emmet-Befehl passt?") {
-    //     setInputText(" ");
-    //     setInputText(btnInputText);
-    //   } else if (inputText === "Deine neue Eingabe ...") {
-    //     setInputText(" ");
-    //     setInputText(btnInputText);
-    //   } else {
-    //     setInputText(inputText + btnInputText);
-    //   }
 
     console.log("clicked");
   };
@@ -35,9 +24,9 @@ export default function TextArea(noteText, inputText, setInputText, hint) {
     console.log("Delete is clicked");
   };
 
-  console.log("noteText: " + noteText);
+  
 
-  console.log("rendering...", inputText);
+  console.log("inputText: ", inputText);
 
   return (
     <>
