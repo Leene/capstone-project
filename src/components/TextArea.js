@@ -5,18 +5,32 @@ import CreateOrder from "./CreateOrder";
 import CreateScore from "./CreateScore";
 
 
+
 export default function TextArea(props) {
 //export default function TextArea(noteText, inputText, setInputText, hint) {
-  const {hint, inputText, setInputText} = props  
+  const {hint, inputText, setInputText, setScoreState, scoreState, setFeedback } = props  
 
 const btnDeleteText = "X";
   const btnInputText = "OK";
 
+  
+  
+  const handleOKBtnClick = () => {
+    if (inputText === hint){
+      setScoreState( scoreState+10)
+      //Feedback("Richtig")
+      setFeedback("Richtig :-D")
+    }else {
+      setFeedback("Falsch :-(")
+      //"FAALSCH!! Punktabzuuccch"
+    }
 
-  const handleClick = () => {
-    CreateScore(inputText, hint);
+    console.log("clicked ok");
+    console.log("OkBtn inputText: " + inputText);
+    console.log("OkBtn hintTExt: " + hint);
+    
+    console.log("OkBtn score: " + setScoreState); 
 
-    console.log("clicked");
   };
 
   const handleDeleteBtnClick = () => {
@@ -32,9 +46,36 @@ const btnDeleteText = "X";
     <>
       <Textarea>{inputText}</Textarea>
       <button onClick={handleDeleteBtnClick}>{btnDeleteText}</button>
-      <button onClick={handleClick}>{btnInputText}</button>
+      <button onClick={handleOKBtnClick}>{btnInputText}</button>
     </>
   );
+}
+
+
+export function Feedback(feedbackText){
+
+      const Wrap = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+height: 30px;
+
+      `
+
+      const DIV = styled.div`
+    font-size:0.8em;
+      color: white;
+      font-weight: bold;
+    
+      width: 50%;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      margin:20px
+     
+      
+    `;
+
+  return <Wrap><DIV>{feedbackText}</DIV></Wrap>
 }
 
 const Textarea = styled.div`

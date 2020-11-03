@@ -4,14 +4,16 @@ import Keyboard, { clickedKey, getTypedText, typedText } from "./Keyboard";
 import styled from "styled-components";
 import { exercises } from "../data/exercises.json";
 import CreateOrder from "./CreateOrder";
-import TextArea from "./TextArea";
+import TextArea, {Feedback} from "./TextArea";
 
 
 export default function GameArea() {
   const [inputText, setInputText] = useState("Welcher Emmet-Befehl passt?");
   const [scoreState, setScoreState] = useState(0);
+  const [feedback, setFeedback] = useState(" ");
 
-  let order = CreateOrder();
+  
+let order = CreateOrder();
   let hint = exercises[order[0]].emmet;
 
 /////////////// Text für Textbox hübsch machen /////////////
@@ -31,12 +33,14 @@ const newText = exercises[order[0]].result.split("\n").map((item, i) => {
 
   return (
     <Gamefield>
+      
       <Boxarea>
+     {Feedback(feedback)}
       <Box>
         <Textbox>
           <code>{newText}</code>
         </Textbox>
-        <TextArea hint={hint} inputText={inputText} setInputText={setInputText} />
+        <TextArea hint={hint} inputText={inputText} setInputText={setInputText} scoreState={scoreState} setScoreState={setScoreState} setFeedback={setFeedback} />
         {/* {TextArea(getTypedText(), inputText, setInputText, hint)} */}
       </Box>
     </Boxarea>

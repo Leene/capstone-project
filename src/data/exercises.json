@@ -44,9 +44,12 @@
       "id": 2,
       "name": "Div-container followed from a paragraph and a blockquote",
       "nameDe": "Div-Container gefolgt von einem Absatz und einem Zitatblock",
-      "emmet": "div+p+bq",
+      "emmet2": "div+p+bq",
+      "emmet": "richtig",
       "result": "<div></div>\n<p></p>\n<blockquote></blockquote>",
-      "btntext": ["div", "p", "bq"]
+      "btntext": ["richtig"],
+      "btntext2": ["div", "p", "bq"]
+      
     },
     {
       "id": 3,
