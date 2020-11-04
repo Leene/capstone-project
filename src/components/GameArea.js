@@ -5,13 +5,16 @@ import styled from "styled-components";
 import { exercises } from "../data/exercises.json";
 import CreateOrder from "./CreateOrder";
 import TextArea, {Feedback} from "./TextArea";
+import GameOverDialog from "./GameOverDialog";
+
 
 
 export default function GameArea() {
   const [inputText, setInputText] = useState("Welcher Emmet-Befehl passt?");
   const [scoreState, setScoreState] = useState(0);
   const [feedback, setFeedback] = useState(" ");
-
+  const [life, setLife] = useState(3);
+  const [visible, setVisible] = useState(false);
   
 let order = CreateOrder();
   let hint = exercises[order[0]].emmet;
@@ -30,22 +33,28 @@ const newText = exercises[order[0]].result.split("\n").map((item, i) => {
 
 /////////////////////////
 
-
   return (
     <Gamefield>
-      
+      <GameOverDialog visible={visible} />
       <Boxarea>
      {Feedback(feedback)}
       <Box>
         <Textbox>
           <code>{newText}</code>
         </Textbox>
-        <TextArea hint={hint} inputText={inputText} setInputText={setInputText} scoreState={scoreState} setScoreState={setScoreState} setFeedback={setFeedback} />
+        <TextArea hint={hint} 
+        inputText={inputText} 
+        setInputText={setInputText} 
+        scoreState={scoreState} 
+        setScoreState={setScoreState} 
+        setFeedback={setFeedback} 
+        setLife={setLife} life={life} 
+        setVisible={setVisible}/>
         {/* {TextArea(getTypedText(), inputText, setInputText, hint)} */}
       </Box>
     </Boxarea>
       <Gameinterface>
-        <GameInterface hint={hint} inputText={inputText} setInputText={setInputText} scoreState={scoreState}/>
+        <GameInterface hint={hint} inputText={inputText} setInputText={setInputText} scoreState={scoreState}  life={life}/>
         <KeyboardStyle>
           <Keyboard inputText={inputText} setInputText={setInputText} order={order}/>
         </KeyboardStyle>

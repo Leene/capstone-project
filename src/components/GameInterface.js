@@ -8,11 +8,12 @@ const life = "https://img.icons8.com/material/20/ffffff/hearts--v1.png";
 // const life = "https://img.icons8.com/material/20/800080/hearts--v1.png"
 
 export default function GameInterface(props) {
-  const {hint, inputText, setInputText, scoreState} = props
+  const {hint, inputText, setInputText, scoreState, life} = props
   
   // let order = CreateOrder();
   // let hint = exercises[order[0]].emmet;
-  console.log("HINT" + hint);
+ 
+  
   const [showText, setShowText] = useState(false);
 
   //const hint = JSON.stringyfy(test)
@@ -27,13 +28,21 @@ export default function GameInterface(props) {
         <HintTextDiv>{showText && <HintText>{props.hint}</HintText>}</HintTextDiv>
       </Hint>
       <Life>
-        <LifeIcon alt="" src={life} />
-        <LifeIcon alt="" src={life} />
-        <LifeIcon alt="" src={life} />
+      {Lifecon(props.life)}
       </Life>
     </>
   );
 }
+
+function Lifecon(amount) {
+  //const amount = life;
+  const rows = [];
+  for (var i = 0; i < amount; i++) {
+    rows.push(<LifeIcon alt="" src={life} key={i} />);
+  }
+  return <>{rows}</>;
+}
+
 
 const HintTextDiv = styled.div`
   width: 75%;
