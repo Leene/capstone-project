@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { exercises } from "../data/exercises.json";
 import CreateOrder from "./CreateOrder";
 import CreateScore from "./CreateScore";
-import GameOverDialog from "./GameOverDialog";
+
 
 
 export default function TextArea(props) {
@@ -59,7 +59,7 @@ const btnDeleteText = "X";
       <Textarea>{inputText}</Textarea>
       <button onClick={handleDeleteBtnClick}>{btnDeleteText}</button>
       <button onClick={handleOKBtnClick}>{btnInputText}</button>
-      <button onClick={GameOverDialog}>heyo</button>
+     
     </>
   );
 }

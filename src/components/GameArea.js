@@ -10,11 +10,14 @@ import GameOverDialog from "./GameOverDialog";
 
 
 export default function GameArea() {
+ 
+
   const [inputText, setInputText] = useState("Welcher Emmet-Befehl passt?");
   const [scoreState, setScoreState] = useState(0);
   const [feedback, setFeedback] = useState(" ");
   const [life, setLife] = useState(3);
   const [visible, setVisible] = useState(false);
+
   
 let order = CreateOrder();
   let hint = exercises[order[0]].emmet;
@@ -35,7 +38,7 @@ const newText = exercises[order[0]].result.split("\n").map((item, i) => {
 
   return (
     <Gamefield>
-      <GameOverDialog visible={visible} />
+      <GameOverDialog visible={visible} setVisible={setVisible} setLife={setLife} setScoreState={setScoreState}  setFeedback={setFeedback} />
       <Boxarea>
      {Feedback(feedback)}
       <Box>

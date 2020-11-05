@@ -1,32 +1,54 @@
 import React from "react";
 import styled from "styled-components";
+import { Router, Link } from '@reach/router'
+import Home from './Home'
+import GameArea from "./GameArea"
 
 export default function GameOverDialog(props) {
+    const {visible, setVisible, setLife, setScoreState, setFeedback } = props
+
+    console.log("visible: " + props.visible)
+
   ////////////////////
 const handleYesBtnClick = () => {
     console.log("jA geklickt")
+// zum Startbildschirm zurück
+
+ 
+
 }
 
 const handleNoBtnClick = () => {
     console.log("NO geklickt")
+// Gameoverdialog ausblenden 
+    setVisible(false)
+// und alle States auf Initialwerte zurücksetzen
+setLife(3) 
+setScoreState(0)
+setFeedback("")
+
 }
-
-
-
-
 
 
 //////////////////////
 
-    const {visible} = props
+   
 
-    console.log("visible: " + props.visible)
-
-    const content =  <>
+const content =  <>
     <h2>Ohje, verloren :-( </h2>
     <p>Möchtest du das Spiel beenden?</p>
-    <button onClick={handleYesBtnClick}>Ja, beenden</button>
-    <button onClick={handleNoBtnClick}>Nein, nochmal Spielen</button></>
+   {/*  <button onClick={handleNoBtnClick}>Nein, nochmal Spielen</button></> */}
+    <Link to ="/">
+    <button >Ja, beenden</button>
+    </Link>
+    <Link to ="/gamearea">
+        <button onClick={handleNoBtnClick}>Nein, nochmal Spielen</button>
+    </Link>
+    <Router>
+        <Home path= "/"></Home>
+        <GameArea path= "/gamearea/"  ></GameArea>
+    </Router>
+</>
 
 
 let toShow
