@@ -7,7 +7,7 @@ import styled from "styled-components";
 import PropTypes from 'prop-types';
 
 export default function Keyboard(props) {
-  const {inputText, setInputText, order } = props
+  const {inputText, setInputText, order, orderNum } = props
 
   //const [counter, setCounter] = useState("0");
 
@@ -39,7 +39,8 @@ export default function Keyboard(props) {
   function renderMiddleKeys() {
     console.log("exercises: " + exercises[4].btntext);
 
-    const middleSide = exercises[order[0]].btntext;
+    //const middleSide = exercises[orderNum].btntext;
+    const middleSide = exercises[order[orderNum]].btntext;
     console.log("middleSide: " + middleSide);
 
     return middleSide.map((key) => (

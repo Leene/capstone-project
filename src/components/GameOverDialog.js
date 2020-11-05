@@ -44,10 +44,7 @@ const content =  <>
     <Link to ="/gamearea">
         <button onClick={handleNoBtnClick}>Nein, nochmal Spielen</button>
     </Link>
-    <Router>
-        <Home path= "/"></Home>
-        <GameArea path= "/gamearea/"  ></GameArea>
-    </Router>
+    
 </>
 
 
