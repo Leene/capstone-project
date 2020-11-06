@@ -5,7 +5,7 @@
             "name": "Three paragraphs",
             "nameDe": "Drei Absätze",
             "emmet": "p*3",
-            "result": "<p></p>\n<p></p>\n<p></p>",
+            "result": "<p></p>\n<p></p>\n<p></p> Frage 1",
             "btntext": ["p", "3"]
         },
         {
@@ -13,7 +13,7 @@
             "name": "Lorem ipsum text with five words",
             "nameDe": "Lorem-Ipsum-Text mit fünf Wörten",
             "emmet": "lorem5",
-            "result": "2Lorem ipsum dolor sit amet.",
+            "result": "2Lorem ipsum dolor sit amet. Frage 2",
             "btntext": ["lorem", "5"]
         },
         {
@@ -21,7 +21,7 @@
             "name": "Lorem ipsum text with three words",
             "nameDe": "Lorem-Ipsum-Text mit drei Wörten",
             "emmet": "lorem3",
-            "result": "3Lorem, ipsum dolor.",
+            "result": "3Lorem, ipsum dolor. Frage 3",
             "btntext": ["lorem", "3"]
         },
         {
@@ -29,90 +29,24 @@
             "name": "Lorem ipsum text with three words",
             "nameDe": "Lorem-Ipsum-Text mit drei Wörten",
             "emmet": "loremindex4",
-            "result": "4Lorem, ipsum dolor.",
+            "result": "4Lorem, ipsum dolor. Frage 4",
             "btntext": ["lorem", "4", "index"]
         },
         {
-            "id": 1,
-            "name": "Navigation with one list item",
-            "nameDe": "Navigation mit einem Listenpunkt",
-            "emmet": "nav>ul>li",
-            "result": "<nav>\n<ul>\n<li></li>\n</ul>\n</nav> ",
-            "btntext": ["nav", "ul", "li"]
-        },
-        {
-            "id": 2,
-            "name": "Div-container followed from a paragraph and a blockquote",
-            "nameDe": "Div-Container gefolgt von einem Absatz und einem Zitatblock",
-            "emmet2": "div+p+bq",
-            "emmet": "richtig index 6",
-            "result": "<div></div>\n<p></p>\n<blockquote></blockquote>",
-            "btntext": ["richtig"],
-            "btntext2": ["div", "p", "bq"]
-        },
-        {
-            "id": 3,
-            "name": "",
-            "nameDe": "",
-            "emmet": "div+div>p>span+em^bq",
-            "result": "<div></div>\n<div>\n<p><span></span><em></em></p>\n<blockquote></blockquote>\n</div>",
-            "btntext": ["div", "p", "span", "em", "^", "bq"]
-        },
-        {
             "id": 4,
-            "name": "",
-            "nameDe": "",
-            "emmet": "div+div>p>span+em^^bq",
-            "result": "<div></div>\n<div>\n<p><span></span><em></em></p>\n</div>\n<blockquote></blockquote>",
-            "btntext": ["div", "p", "span", "em", "^", "bq"]
-        },
-        {
-            "id": 5,
-            "name": "",
-            "nameDe": "",
-            "emmet": "div>(header>ul>li*2>a)+footer>p",
-            "result": "<div>\n<header>\n<ul>\n<li><a href=\"\"></a></li>\n<li><a href=\"\"></a></li>\n</ul>\n</header>\n<footer>\n<p></p>\n</footer>\n</div>",
-            "btntext": ["div", "header", "ul", "li", "2", "a", "footer", "p"]
-        },
-        {
-            "id": 6,
-            "name": "",
-            "nameDe": "",
-            "emmet": "",
-            "result": "",
-            "btntext": ["", "", ""]
-        },
-        {
-            "id": 7,
-            "name": "",
-            "nameDe": "",
-            "emmet": "",
-            "result": "",
-            "btntext": ["", "", ""]
-        },
-        {
-            "id": 8,
-            "name": "",
-            "nameDe": "",
-            "emmet": "",
-            "result": "",
-            "btntext": ["", "", ""]
-        },
-        {
-            "id": 9,
-            "name": "",
-            "nameDe": "",
-            "emmet": "",
-            "result": "",
-            "btntext": ["", "", ""]
+            "name": "Lorem ipsum text with three words",
+            "nameDe": "Lorem-Ipsum-Text mit drei Wörten",
+            "emmet": "loremindex4",
+            "result": "4Lorem, ipsum dolor. Frage 5",
+            "btntext": ["lorem", "4", "index"]
         },
         {
             "id": 10,
-            "name": "",
-            "nameDe": "",
-            "emmet": "",
-            "result": "",
-            "btntext": ["", "", ""]
+            "name": "Lorem ipsum text with three words",
+            "nameDe": "Lorem-Ipsum-Text mit drei Wörten",
+            "emmet": "loremindex4",
+            "result": "4Lorem, ipsum dolor. Frage 6",
+            "btntext": ["lorem", "4", "index"]
         }
     ]
 }

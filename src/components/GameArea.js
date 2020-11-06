@@ -1,54 +1,61 @@
 import React, { useState } from 'react'
 import GameInterface from './GameInterface'
-import Keyboard, { clickedKey, getTypedText, typedText } from './Keyboard'
+import Keyboard from './Keyboard'
 import styled from 'styled-components'
 import { exercises } from '../data/exercises.json'
 import CreateOrder from './CreateOrder'
 import TextArea, { Feedback } from './TextArea'
 import GameOverDialog from './GameOverDialog'
+import WinnerDialog from './WinnerDialog'
 
 export default function GameArea() {
-  let order = CreateOrder()
+    let order = CreateOrder()
 
     const [inputText, setInputText] = useState('Welcher Emmet-Befehl passt?')
     const [scoreState, setScoreState] = useState(0)
     const [feedback, setFeedback] = useState(' ')
     const [life, setLife] = useState(3)
     const [visible, setVisible] = useState(false)
-
+    const [winnerDialog, setWinnerDialog] = useState(false)
     const [orderNum, setOrderNum] = useState(0)
-    //const [newText, setNewText] = useState(getOrder(orderNum))
-    //const [newText, setNewText] = useState(getOrder(orderNum))
-
-   
-    //let newText = exercises[order[orderNum]].result
+  
     let hint = exercises[order[orderNum]].emmet
 
-
     /////////////// Text für Textbox hübsch machen /////////////
-    
-    const newText = exercises[order[orderNum]].result.split('\n').map((item, i) => {
-        
-        return (
-            <span key={i}>
-                {item}
-                <br />
-            </span>
-        )
-    })
-  
-   
-    
+
+    const newText = exercises[order[orderNum]].result
+        .split('\n')
+        .map((item, i) => {
+            return (
+                <span key={i}>
+                    {item}
+                    <br />
+                </span>
+            )
+        })
+
     /////////////////////////
 
     return (
         <Gamefield>
-            <GameOverDialog
+            <WinnerDialog
+                winnerDialog={winnerDialog}
+                setWinnerDialog={setWinnerDialog}
+                setLife={setLife}
+                setScoreState={setScoreState}
+                setFeedback={setFeedback}
+                setOrderNum={setOrderNum}
+            />
+
+<GameOverDialog
+
                 visible={visible}
                 setVisible={setVisible}
                 setLife={setLife}
                 setScoreState={setScoreState}
                 setFeedback={setFeedback}
+                setOrderNum={setOrderNum}
+
             />
             <Boxarea>
                 {Feedback(feedback)}
@@ -57,7 +64,7 @@ export default function GameArea() {
                         <code>{newText}</code>
                     </Textbox>
                     <TextArea
-                    amountOfQuestions = {exercises.length}
+                        amountOfQuestions={exercises.length}
                         hint={hint}
                         inputText={inputText}
                         setInputText={setInputText}
@@ -67,10 +74,9 @@ export default function GameArea() {
                         setLife={setLife}
                         life={life}
                         setVisible={setVisible}
-                       /*  setNewText={setNewText} */
-                        newText={newText}
                         orderNum={orderNum}
                         setOrderNum={setOrderNum}
+                        setWinnerDialog={setWinnerDialog}
                     />
                     {/* {TextArea(getTypedText(), inputText, setInputText, hint)} */}
                 </Box>
@@ -78,8 +84,6 @@ export default function GameArea() {
             <Gameinterface>
                 <GameInterface
                     hint={hint}
-                    inputText={inputText}
-                    setInputText={setInputText}
                     scoreState={scoreState}
                     life={life}
                 />

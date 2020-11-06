@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { exercises } from '../data/exercises.json'
+//import { exercises } from '../data/exercises.json'
 import CreateOrder from './CreateOrder'
-import CreateScore from './CreateScore'
-import {getOrder} from "./GameArea"
+//import CreateScore from './CreateScore'
+//import {getOrder} from "./GameArea"
 
 export default function TextArea(props) {
 
-  let order = CreateOrder()
     //export default function TextArea(noteText, inputText, setInputText, hint) {
     const {
       amountOfQuestions,
@@ -20,45 +19,47 @@ export default function TextArea(props) {
         life,
         setLife,
         setVisible,
-        newText,
-        setNewText,
         orderNum,
-        setOrderNum
+        setOrderNum,
+        setWinnerDialog
     } = props
 
     const btnDeleteText = 'X'
     const btnInputText = 'OK'
 
-    console.log("orderNum:" + orderNum)
+    console.log("vormHandlerorderNum:" + orderNum)
+    let i = orderNum
+
     const handleOKBtnClick = () => {
-        if (inputText === hint) {
+        if (inputText === hint  ) {
             setScoreState(scoreState + 10)
-            //Feedback("Richtig")
-            //>>>>> TODO: nächsteFrage und neuen hint generieren
-
             setFeedback('Richtig :-D')
-            
-
+            setInputText('Welcher Emmet-Befehl passt?')
 
             console.log("neue orderNum:" + orderNum)
-           // console.log("newText okBtn" + newText)
-
             
+            if(orderNum < amountOfQuestions-1) // -1 da es hier dem höchsten Indexwert von Array "order" entsprechen muss und Indizes bei 0 starten
+                {setOrderNum(orderNum +1)}
+
+             else {
+              setFeedback('Super, alle Fragen richtig gelöst!')
+              setWinnerDialog(true)
+              
+            }
+
+           
+        }
        
-           // setNewText(exercises[order[orderNum]].result)
-            setOrderNum(orderNum +1)
-
-
-
-           // setOrderNum(orderNum + 1)
-        } else {
+        
+        else {
             setFeedback('Falsch :-(')
-            //"FAALSCH!! Punktabzuuccch"
             setLife(life - 1)
+            setInputText('Welcher Emmet-Befehl passt?')
 
-            if (life <= 1) {
+            if (life <= 1 ) {
                 setFeedback('Game Over')
                 setVisible(true)
+                
             }
         }
 
@@ -82,7 +83,7 @@ export default function TextArea(props) {
             <Textarea>{inputText}</Textarea>
             <button onClick={handleDeleteBtnClick}>{btnDeleteText}</button>
             <button onClick={handleOKBtnClick}>{btnInputText}</button>
-            <p>Anzahl der Fragen: {amountOfQuestions}</p>
+    <p>Anzahl der Fragen: {amountOfQuestions} OK:{i}</p>
         </>
     )
 }

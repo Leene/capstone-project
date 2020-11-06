@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "../css/Style.css";
 import { signs } from "../data/keyboard_symbols.json";
 import { exercises } from "../data/exercises.json";
 import styled from "styled-components";
 
-import PropTypes from 'prop-types';
 
 export default function Keyboard(props) {
   const {inputText, setInputText, order, orderNum } = props
-
-  //const [counter, setCounter] = useState("0");
 
   function renderLeftKeys() {
     const leftSide = signs.slice(0, 12);
@@ -22,7 +19,6 @@ export default function Keyboard(props) {
   }
   function renderRightKeys() {
     const rightSide = signs.slice(12, 24);
-    console.log("rightSide: " + rightSide);
     return rightSide.map((key) => (
       // <KeysSideDiv onClick={() => clickedKey(key.symbol)} key={key.symbol}>
       <KeysSideDiv onClick={() => handleClick(key.symbol)} key={key.symbol}>
@@ -91,18 +87,6 @@ export function getTypedText() {
 }
 
 
-Keyboard.propTypes = {
-  inputText: PropTypes.string.isRequired,
-  setInputText: PropTypes.string.isRequired,
-  
-  };
-  
-  Keyboard.defaultProps = {
-  // gegen Abstürze bei nicht gefundener Funktion
-  additional: {
-  notes: "No Additional Information"
-  }
-  };
 
  
 /////////////////////////////////////////////

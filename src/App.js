@@ -76,10 +76,6 @@ const Title = styled.h1`
   opacity:0.6;
 `
 
-const Button = styled.button`
-  text-align: left;
- 
-`
 const NavButton = styled.button`
 background-color: ${COLORS.secondary};
 height: 3em;
