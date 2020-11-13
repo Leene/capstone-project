@@ -3,6 +3,7 @@ import "../css/Style.css";
 import { signs } from "../data/keyboard_symbols.json";
 import { exercises } from "../data/exercises.json";
 import styled from "styled-components";
+import { COLORS } from '../constants';
 
 
 export default function Keyboard(props) {
@@ -102,26 +103,28 @@ const KeysSide = styled.div`
   height: 30vh;
   font-weight: bold;
   font-size: 1.5em;
-  color: #566fad;
   text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
 `;
 const KeysSideDiv = styled.button`
   cursor: pointer;
-  width: 33%;
+  width: 32%;
   height: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
 
+
+  
+
   &:active {
-    color: #f2fcfd;
+    color: ${COLORS.lightText};
     background: linear-gradient(
       45deg,
       rgb(75, 192, 215) 100%,
       rgb(220, 236, 255) 10%
     );
     box-shadow: 2px 2px 5px 6px rgba(58, 32, 10, 0.2);
-    // margin-top: -2em;
+ 
   }
 `;
 
@@ -138,6 +141,7 @@ const KeysMiddleDiv = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  
 
   &:active {
     color: #f2fcfd;

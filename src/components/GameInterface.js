@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { COLORS } from '../constants';
 //import { exercises } from '../data/exercises.json'
 //import CreateOrder from './CreateOrder'
 //import CreateScore from './CreateScore'
 
-const life = 'https://img.icons8.com/material/20/ffffff/hearts--v1.png'
+const life = 'https://img.icons8.com/material/20/000000/hearts--v1.png'
 // const life = "https://img.icons8.com/material/20/800080/hearts--v1.png"
 
 export default function GameInterface(props) {
@@ -24,7 +25,7 @@ export default function GameInterface(props) {
             </Score>
             <Hint>
                 <HintButton onClick={() => setShowText(!showText)}>
-                    HINT:
+                    HINT
                 </HintButton>
                 <HintTextDiv>
                     {showText && <HintText>{hint}</HintText>}
@@ -49,6 +50,7 @@ const HintTextDiv = styled.div`
     height: 100%;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 0 20px 20px 0;
+    box-shadow: 2px 2px 5px 6px ${COLORS.shadow};
 `
 
 const HintText = styled.p`
@@ -57,9 +59,9 @@ const HintText = styled.p`
 `
 
 const HintButton = styled.button`
+box-shadow: 2px 2px 5px 6px ${COLORS.shadow};
     cursor: pointer;
-
-    width: 25%;
+    width: 20%;
     height: 100%;
     border: none;
     border-radius: 20px 0 0 20px;
@@ -67,8 +69,8 @@ const HintButton = styled.button`
     font-size: 0.8em;
     font-weight: bold;
     letter-spacing: 1px;
-    color: white;
-    background-color: #566fad;
+    color: rgba(${COLORS.light}, 0.7);
+    background-color: rgba(${COLORS.violet}, 0.6);
 
     &:active {
         color: #f2fcfd;
@@ -85,7 +87,7 @@ const Score = styled.div`
     grid-area: score;
     letter-spacing: 1px;
     font-size: 1.1em;
-    color: white;
+    color: ${COLORS.text};
     font-weight: bold;
     min-width: 3em;
     height: 30px;
@@ -109,7 +111,7 @@ const Hint = styled.div`
 
 const Life = styled.div`
     grid-area: life;
-    color: white;
+    
     font-weight: bold;
     min-width: 4em;
     height: 30px;

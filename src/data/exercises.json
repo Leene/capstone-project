@@ -1,12 +1,13 @@
 {
     "exercises": [
         {
-            "id": 81,
-            "name": "Three paragraphs",
-            "nameDe": "Drei Absätze",
-            "emmet": "p*3",
-            "result": "<p></p>\n<p></p>\n<p></p> Frage 1",
-            "btntext": ["p", "3"]
+            "id": 1,
+            "category": "Syntax",
+            "name": "Making Children",
+            "nameDe": "Kinder machen",
+            "emmet": "nav>ul>li",
+            "result": "<nav>\n<ul>\n<li></li>\n</ul>\n</nav>",
+            "btntext": ["nav", "ul", "li"]
         },
         {
             "id": 82,

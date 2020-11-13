@@ -25,7 +25,7 @@ export default function App() {
             <LinkStyled to ="/">
                 <NavButton><img alt="" src={home_icon} /></NavButton>
                 </LinkStyled>
-            <Title>Emmet Typing Game</Title>
+      
             <LinkStyled to ="/gamearea">
                 <NavButton><img alt="" src={start_icon} /></NavButton>
             </LinkStyled>
@@ -58,7 +58,6 @@ export default function App() {
 const Header = styled.header`
   display: flex;
 justify-content: space-between;
-
 `
 
 // "display: flex;" bei Link verhindert das Verrutschen der NavButtons beim Ändern der Fenstergröße:
@@ -66,15 +65,6 @@ const LinkStyled = styled(Link)`
   display: flex; 
 `
 
-const Title = styled.h1`
-
-  height: 5rem;
-  text-align: center;
-  margin-top:2px;
-  font-size: 20px;
-  color:${COLORS.lightText}; 
-  opacity:0.6;
-`
 
 const NavButton = styled.button`
 background-color: ${COLORS.secondary};

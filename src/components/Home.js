@@ -5,8 +5,9 @@ import { COLORS } from '../constants';
 export default function Home(){
     return (
     <Main>
-        <h1>Emmet Typing Game</h1>
         
+        <LOGO alt="logo" src="/EmmetGame_Frontlogo_Schatten.png"/>
+
         <Text>Ein Spiel zum Erlernen von Emmet-Befehlen.</Text>
         <URLBtn
                 href="https://docs.emmet.io/cheat-sheet/"
@@ -25,12 +26,15 @@ export default function Home(){
 const Main = styled.section`
   text-align: center;
 `
+const LOGO = styled.img`
+  text-align: center;
+  margin:15vh 0 0 0;
+`
 
 const URLBtn = styled.a`
 box-shadow: 1px 2px 3px 3px rgba(58, 32, 10, 0.2);
-border-radius:3px;
 padding: 10px;
-background-color: ${COLORS.secondary};
+background-color: ${COLORS.primary};
 color: ${COLORS.lightText};
 text-decoration:none;
 `

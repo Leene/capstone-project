@@ -7,6 +7,7 @@ import CreateOrder from './CreateOrder'
 import TextArea, { Feedback } from './TextArea'
 import GameOverDialog from './GameOverDialog'
 import WinnerDialog from './WinnerDialog'
+import { COLORS } from '../constants';
 
 export default function GameArea() {
     let order = CreateOrder()
@@ -37,7 +38,11 @@ export default function GameArea() {
     /////////////////////////
 
     return (
+        
         <Gamefield>
+            <Header>
+            <HeadLogo alt="logo" src="/EmmetGame_Headlogo_Schatten.png"/>
+            </Header>
             <WinnerDialog
                 winnerDialog={winnerDialog}
                 setWinnerDialog={setWinnerDialog}
@@ -63,6 +68,7 @@ export default function GameArea() {
                     <Textbox>
                         <code>{newText}</code>
                     </Textbox>
+                   
                     <TextArea
                         amountOfQuestions={exercises.length}
                         hint={hint}
@@ -79,7 +85,8 @@ export default function GameArea() {
                         setWinnerDialog={setWinnerDialog}
                     />
                     {/* {TextArea(getTypedText(), inputText, setInputText, hint)} */}
-                </Box>
+                    
+                 </Box>
             </Boxarea>
             <Gameinterface>
                 <GameInterface
@@ -100,37 +107,70 @@ export default function GameArea() {
     )
 }
 
+
+const Header = styled.header`
+display: flex;
+justify-content: center;
+ 
+  position:fixed;
+  
+  
+`
+const HeadLogo = styled.img`
+  height: 40px;
+  opacity:1;
+  padding: 2px;
+`
+
 const Gamefield = styled.section`
     height: 90vh;
     display: flex;
-    align-items: flex-start;
+    
     justify-content: center;
     text-align: center;
     margin-top: -40px;
 `
 
 const Boxarea = styled.div`
-    // border: solid 1px pink;
+   // border: solid 1px pink;
     height: auto;
     width: auto;
-    margin-top: 20vh;
+    margin-top: 10vh;
+    
 `
 
 const Box = styled.div`
+//display:flex;
+//align-items:space-around;
+//align-content: center;
+
+border-style: solid;
+    border-width: 2px;
+
     background-color: rgba(255, 255, 255, 0.338);
     height: auto;
     width: 80vw;
-    margin: 0 0 20px 0;
-    border-radius: 1rem;
-    box-shadow: 2px 2px 5px 6px rgba(58, 32, 10, 0.1);
+    box-shadow: 1px 1px 8px 3px ${COLORS.shadow};
+
     padding: 10px;
+    box-shadow: inset 1px 2px 2px 0px ${COLORS.light};
+    border-image: 
+    linear-gradient(
+      to bottom, 
+        rgba(255,255,255,0) 1%,
+        rgba(255,255,255,0.8) 10%,
+        rgba(255,255,255,0) 100%
+    ) 1 100%;
+    
+    
 `
 
 const Textbox = styled.div`
     background-color: rgba(27, 24, 87, 0.728);
-    margin: 0px 0px;
+    margin: 3px 0px;
     color: rgb(152, 236, 255);
     padding: 10px 3px;
+    
 `
 
 const Gameinterface = styled.div`
@@ -149,26 +189,27 @@ const KeyboardStyle = styled.section`
     margin-top: -1vh;
     user-select: none;
     grid-area: keyboard;
-    background-color: gainsboro;
     width: 100vw;
     display: flex;
     font-size: calc(10px + 2vmin);
     /* offset-x | offset-y | blur-radius | spread-radius | color */
     box-shadow: 2px 2px 5px 6px rgba(58, 32, 10, 0.2);
     & div {
-        background: rgba(75, 192, 215, 1) 9%;
+        //background: rgba(75, 56, 215, 1) 9%;
     }
     & button {
         border: 0;
+        margin:1px;
         list-style: none;
         background: linear-gradient(
-            45deg,
-            rgba(75, 192, 215, 1) 9%,
-            rgb(220, 236, 255) 100%
+            135deg,
+            rgba(${COLORS.background2_NUM}, 0.5) 1%,
+            rgba(${COLORS.light}, 0.4) 35%,
+            rgb(${COLORS.background1_NUM}, 1) 100%
         );
         font-weight: bold;
         font-size: 1.3em;
-        color: #566fad;
+        color: ${COLORS.text};
         text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
     }
 `
