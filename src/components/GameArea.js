@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
-import GameInterface from './GameInterface'
-import Keyboard from './Keyboard'
 import styled from 'styled-components'
+import { COLORS } from '../constants';
+import GameInterface from './GameInterface'
 import { exercises } from '../data/exercises.json'
-import CreateOrder from './CreateOrder'
 import TextArea, { Feedback } from './TextArea'
 import GameOverDialog from './GameOverDialog'
 import WinnerDialog from './WinnerDialog'
-import { COLORS } from '../constants';
+import CreateOrder from './CreateOrder'
+import Keyboard from './Keyboard'
 
 export default function GameArea() {
     let order = CreateOrder()
-
     const [inputText, setInputText] = useState('Welcher Emmet-Befehl passt?')
     const [scoreState, setScoreState] = useState(0)
     const [feedback, setFeedback] = useState(' ')
@@ -19,11 +18,8 @@ export default function GameArea() {
     const [visible, setVisible] = useState(false)
     const [winnerDialog, setWinnerDialog] = useState(false)
     const [orderNum, setOrderNum] = useState(0)
-  
     let hint = exercises[order[orderNum]].emmet
-
-    /////////////// Text für Textbox hübsch machen /////////////
-
+    
     const newText = exercises[order[orderNum]].result
         .split('\n')
         .map((item, i) => {
@@ -35,10 +31,7 @@ export default function GameArea() {
             )
         })
 
-    /////////////////////////
-
     return (
-        
         <Gamefield>
             <Header>
             <HeadLogo alt="logo" src="/EmmetGame_Headlogo_Schatten.png"/>
@@ -51,9 +44,7 @@ export default function GameArea() {
                 setFeedback={setFeedback}
                 setOrderNum={setOrderNum}
             />
-
 <GameOverDialog
-
                 visible={visible}
                 setVisible={setVisible}
                 setLife={setLife}
@@ -63,12 +54,14 @@ export default function GameArea() {
 
             />
             <Boxarea>
-                {Feedback(feedback)}
+                
+                    <div>{Feedback(feedback)}</div>
+                    <DIV><div><p>{orderNum+1} / {exercises.length}</p></div>
+                </DIV>
                 <Box>
                     <Textbox>
                         <code>{newText}</code>
                     </Textbox>
-                   
                     <TextArea
                         amountOfQuestions={exercises.length}
                         hint={hint}
@@ -111,66 +104,65 @@ export default function GameArea() {
 const Header = styled.header`
 display: flex;
 justify-content: center;
- 
-  position:fixed;
-  
-  
+position:fixed; 
 `
 const HeadLogo = styled.img`
-  height: 40px;
-  opacity:1;
+  height: 30px;
   padding: 2px;
+  opacity:1;
 `
 
 const Gamefield = styled.section`
-    height: 90vh;
     display: flex;
-    
     justify-content: center;
-    text-align: center;
+    height: 90vh;
     margin-top: -40px;
+    text-align: center;
 `
 
 const Boxarea = styled.div`
-   // border: solid 1px pink;
     height: auto;
     width: auto;
     margin-top: 10vh;
-    
+`
+const DIV = styled.div`
+display:flex;
+justify-content:flex-end;
+margin-top:-4vh;
+& p {
+    color: rgb(${COLORS.light});
+   // font-weight: bold;
+    font-size: 0.5em;
+}
+
 `
 
 const Box = styled.div`
-//display:flex;
-//align-items:space-around;
-//align-content: center;
-
-border-style: solid;
-    border-width: 2px;
-
-    background-color: rgba(255, 255, 255, 0.338);
     height: auto;
     width: 80vw;
-    box-shadow: 1px 1px 8px 3px ${COLORS.shadow};
-
     padding: 10px;
-    box-shadow: inset 1px 2px 2px 0px ${COLORS.light};
+    border-style: solid;
+    border-width: 2px;
     border-image: 
     linear-gradient(
-      to bottom, 
-        rgba(255,255,255,0) 1%,
-        rgba(255,255,255,0.8) 10%,
-        rgba(255,255,255,0) 100%
-    ) 1 100%;
-    
-    
+        to bottom, 
+        rgba(${COLORS.light},0) 1%,
+        rgba(${COLORS.light},0.8) 10%,
+        rgba(${COLORS.light},0) 100%
+        ) 1 100%;
+    background-color: rgba(${COLORS.light}, 0.2);
+    box-shadow: 1px 1px 8px 3px ${COLORS.shadow_RGBA};
 `
 
 const Textbox = styled.div`
-    background-color: rgba(27, 24, 87, 0.728);
-    margin: 3px 0px;
-    color: rgb(152, 236, 255);
+    background-color: rgba(${COLORS.violet}, 0.7);
+    color: rgb(${COLORS.code});
     padding: 10px 3px;
-    
+    overflow: scroll;
+  overscroll-behavior: none;
+  scrollbar-width: thin; 
+  scrollbar-color: rgba(${COLORS.primary}, 0.3) rgba(${COLORS.primary}, 0.0);
+  height:20vh;
 `
 
 const Gameinterface = styled.div`
@@ -186,21 +178,18 @@ const Gameinterface = styled.div`
 `
 
 const KeyboardStyle = styled.section`
+    grid-area: keyboard;
+    display: flex;
+    width: 100vw;
     margin-top: -1vh;
     user-select: none;
-    grid-area: keyboard;
-    width: 100vw;
-    display: flex;
     font-size: calc(10px + 2vmin);
     /* offset-x | offset-y | blur-radius | spread-radius | color */
-    box-shadow: 2px 2px 5px 6px rgba(58, 32, 10, 0.2);
-    & div {
-        //background: rgba(75, 56, 215, 1) 9%;
+    box-shadow: 2px 2px 5px 6px ${COLORS.shadow_RGBA};
     }
     & button {
-        border: 0;
+        border: none;
         margin:1px;
-        list-style: none;
         background: linear-gradient(
             135deg,
             rgba(${COLORS.background2_NUM}, 0.5) 1%,

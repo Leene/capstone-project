@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from '@reach/router'
+import { COLORS } from '../constants';
+
 //import Home from './Home'
 //import GameArea from './GameArea'
 
@@ -21,14 +23,13 @@ export default function GameOverDialog(props) {
         setScoreState(0)
         setFeedback('')
         setOrderNum(0)
-        ///>>>>>>>>>> TODO neue Fragereihenfolge bei nochmal spielen
+        
     }
 
-    //////////////////////
-
+    
     const content = (
         <>
-            <h2>{headline}</h2>
+            <h2>Ohje, leider verloren :-(</h2>
             <p>Möchtest du das Spiel beenden?</p>
             {/*  <button onClick={handleNoBtnClick}>Nein, nochmal Spielen</button></> */}
             <Link to="/">
@@ -54,10 +55,12 @@ export default function GameOverDialog(props) {
 }
 
 const DIV = styled.div`
-    background-color: peachpuff;
-    height: 60vh;
+background-color: rgb(${COLORS.hintfield});
+
+box-shadow: 2px 2px 5px 3px ${COLORS.shadow_RGBA};
+    height: 50vh;
     width: 80vw;
     position: absolute;
-    margin: 0 10%;
+    margin: 10% 10%;
     opacity: 1;
 `

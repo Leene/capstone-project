@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import CreateOrder from './CreateOrder'
 //import CreateScore from './CreateScore'
 //import {getOrder} from "./GameArea"
+import { COLORS } from '../constants';
+
 
 export default function TextArea(props) {
 
@@ -40,17 +42,11 @@ export default function TextArea(props) {
             
             if(orderNum < amountOfQuestions-1) // -1 da es hier dem höchsten Indexwert von Array "order" entsprechen muss und Indizes bei 0 starten
                 {setOrderNum(orderNum +1)}
-
              else {
               setFeedback('Super, alle Fragen richtig gelöst!')
               setWinnerDialog(true)
-              
             }
-
-           
         }
-       
-        
         else {
             setFeedback('Falsch :-(')
             setLife(life - 1)
@@ -81,9 +77,8 @@ export default function TextArea(props) {
     return (
         <>
             <Textarea>{inputText}</Textarea>
-            <button onClick={handleDeleteBtnClick}>{btnDeleteText}</button>
-            <button onClick={handleOKBtnClick}>{btnInputText}</button>
-    <p>Anzahl der Fragen: {amountOfQuestions} OK:{i}</p>
+            <BTN title="Eingabe löschen" onClick={handleDeleteBtnClick}>{btnDeleteText}</BTN>
+            <BTN title="Eingabe bestätigen" onClick={handleOKBtnClick}>{btnInputText}</BTN>
         </>
     )
 }
@@ -94,15 +89,16 @@ export function Feedback(feedbackText) {
         justify-content: center;
         align-items: center;
         height: 30px;
+        margin-bottom: 5px;
     `
 
     const DIV = styled.div`
         font-size: 0.8em;
-        color: white;
-        font-weight: bold;
+        color: rgb(${COLORS.light});
         width: 50%;
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 20px;
+        background-color: rgba(${COLORS.light}, 0.2);
+        font-weight:bold;
+       border-radius: 20px;
         margin: 20px;
     `
 
@@ -118,10 +114,30 @@ const Textarea = styled.div`
     overflow-wrap: break-word;
     color: white;
     font-weight: bold;
-    width: 96%;
+    box-shadow: inset 2px 2px 3px 2px rgba(${COLORS.shadow}, 0.2); 
+    
 
     background-color: #393c8060;
-    padding: 1vw 2vw 2vw 2vw;
-    margin: 1vw 1vw 3px 8px;
-    // resize: none;
+    padding: 10px;
+   margin-top: 8px;
+   
+`
+const BTN = styled.button`
+cursor:pointer;
+width:60px;
+Border-radius:20px;
+border:none;
+   box-shadow: 1px 2px 3px 3px rgba(58, 32, 10, 0.2); 
+    margin: 20px  20px 0 ;
+    padding: 10px;
+    background-color: rgba(${COLORS.violet}, 0.5);
+
+
+    color: rgb(${COLORS.lightText});
+   font-weight:bold;
+    letter-spacing: 1px;
+    &:hover {
+        background-color: rgb(${COLORS.background1_NUM});
+    }
+
 `

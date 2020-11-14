@@ -48,9 +48,9 @@ function Lifecon(amount) {
 const HintTextDiv = styled.div`
     width: 75%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgb(${COLORS.hintfield});
     border-radius: 0 20px 20px 0;
-    box-shadow: 2px 2px 5px 6px ${COLORS.shadow};
+    box-shadow: 2px 2px 5px 6px ${COLORS.shadow_RGBA};
 `
 
 const HintText = styled.p`
@@ -59,19 +59,22 @@ const HintText = styled.p`
 `
 
 const HintButton = styled.button`
-box-shadow: 2px 2px 5px 6px ${COLORS.shadow};
+box-shadow: 2px 2px 5px 6px ${COLORS.shadow_RGBA};
     cursor: pointer;
     width: 20%;
     height: 100%;
     border: none;
     border-radius: 20px 0 0 20px;
 
-    font-size: 0.8em;
+    font-size: 0.6em;
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     color: rgba(${COLORS.light}, 0.7);
-    background-color: rgba(${COLORS.violet}, 0.6);
+    background-color: rgb(${COLORS.middleviolet});
 
+    &:hover {
+        background-color: rgb(${COLORS.background1_NUM});
+    }
     &:active {
         color: #f2fcfd;
         background: linear-gradient(

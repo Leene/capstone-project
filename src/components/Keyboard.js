@@ -89,9 +89,6 @@ export function getTypedText() {
 
 
 
- 
-/////////////////////////////////////////////
-
 
 
 
@@ -99,22 +96,23 @@ export function getTypedText() {
 const KeysSide = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   width: 35vw;
-  height: 30vh;
+  height: 35vh;
   font-weight: bold;
   font-size: 1.5em;
   text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
 `;
 const KeysSideDiv = styled.button`
   cursor: pointer;
-  width: 32%;
+  width: 31%;
   height: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
-
-
-  
+  &:hover {
+    background-color: rgb(${COLORS.violet});
+}
 
   &:active {
     color: ${COLORS.lightText};
@@ -130,17 +128,22 @@ const KeysSideDiv = styled.button`
 
 //  color: #f2fcfd;
 const KeysMiddle = styled.div`
-  width: 30%;
+  
   overflow: scroll;
   overscroll-behavior: none;
+  scrollbar-width: thin; 
+  scrollbar-color: rgba(${COLORS.primary}, 0.2) rgba(${COLORS.background1_NUM}, 0.0);
+  display: flex;
+  width: 33%;
+  flex-direction: column;
+  height:35vh;
 `;
 
 const KeysMiddleDiv = styled.button`
   height: 25%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  &:hover {
+    background-color: rgb(${COLORS.violet});
+}
   
 
   &:active {
