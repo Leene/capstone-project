@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "../css/Style.css";
 import { signs } from "../data/keyboard_symbols.json";
 import { exercises } from "../data/exercises.json";
 import styled from "styled-components";
+import { COLORS } from '../constants';
 
-export default function Keyboard(inputText, setInputText, order) {
-  //const [counter, setCounter] = useState("0");
+
+export default function Keyboard(props) {
+  const {inputText, setInputText, order, orderNum } = props
 
   function renderLeftKeys() {
     const leftSide = signs.slice(0, 12);
@@ -18,7 +20,6 @@ export default function Keyboard(inputText, setInputText, order) {
   }
   function renderRightKeys() {
     const rightSide = signs.slice(12, 24);
-    console.log("rightSide: " + rightSide);
     return rightSide.map((key) => (
       // <KeysSideDiv onClick={() => clickedKey(key.symbol)} key={key.symbol}>
       <KeysSideDiv onClick={() => handleClick(key.symbol)} key={key.symbol}>
@@ -26,7 +27,7 @@ export default function Keyboard(inputText, setInputText, order) {
       </KeysSideDiv>
     ));
   }
-
+//////////////////////////////////////////////////////////////////////
   //let btnTextArray = exercises[order[0]].btntext;
   let btnTextArray = exercises[4].btntext;
   console.log("btnTextArray" + btnTextArray);
@@ -35,7 +36,8 @@ export default function Keyboard(inputText, setInputText, order) {
   function renderMiddleKeys() {
     console.log("exercises: " + exercises[4].btntext);
 
-    const middleSide = exercises[order[0]].btntext;
+    //const middleSide = exercises[orderNum].btntext;
+    const middleSide = exercises[order[orderNum]].btntext;
     console.log("middleSide: " + middleSide);
 
     return middleSide.map((key) => (
@@ -81,52 +83,68 @@ export function clickedKey(symbol) {
 
 export function getTypedText() {
   console.log("getTypedText: " + typedText);
+  
   return typedText;
 }
+
+
+
+
+
+
 
 const KeysSide = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   width: 35vw;
-  height: 30vh;
+  height: 35vh;
   font-weight: bold;
   font-size: 1.5em;
-  color: #566fad;
   text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
 `;
 const KeysSideDiv = styled.button`
   cursor: pointer;
-  width: 33%;
+  width: 31%;
   height: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
+  &:hover {
+    background-color: rgb(${COLORS.violet});
+}
 
   &:active {
-    color: #f2fcfd;
+    color: ${COLORS.lightText};
     background: linear-gradient(
       45deg,
       rgb(75, 192, 215) 100%,
       rgb(220, 236, 255) 10%
     );
     box-shadow: 2px 2px 5px 6px rgba(58, 32, 10, 0.2);
-    // margin-top: -2em;
+ 
   }
 `;
 
 //  color: #f2fcfd;
 const KeysMiddle = styled.div`
-  width: 30%;
+  
   overflow: scroll;
   overscroll-behavior: none;
+  scrollbar-width: thin; 
+  scrollbar-color: rgba(${COLORS.primary}, 0.2) rgba(${COLORS.background1_NUM}, 0.0);
+  display: flex;
+  width: 33%;
+  flex-direction: column;
+  height:35vh;
 `;
 
 const KeysMiddleDiv = styled.button`
   height: 25%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  &:hover {
+    background-color: rgb(${COLORS.violet});
+}
+  
 
   &:active {
     color: #f2fcfd;

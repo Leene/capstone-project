@@ -1,116 +1,203 @@
 {
-  "exercises": [
-    {
-      "id": 81,
-      "name": "Three paragraphs",
-      "nameDe": "Drei Absätze",
-      "emmet": "p*3",
-      "result": "<p></p>\n<p></p>\n<p></p>",
-      "btntext": ["p", "3"]
-    },
-    {
-      "id": 82,
-      "name": "Lorem ipsum text with five words",
-      "nameDe": "Lorem-Ipsum-Text mit fünf Wörten",
-      "emmet": "lorem5",
-      "result": "2Lorem ipsum dolor sit amet.",
-      "btntext": ["lorem", "5"]
-    },
-    {
-      "id": 83,
-      "name": "Lorem ipsum text with three words",
-      "nameDe": "Lorem-Ipsum-Text mit drei Wörten",
-      "emmet": "lorem3",
-      "result": "3Lorem, ipsum dolor.",
-      "btntext": ["lorem", "3"]
-    },
-    {
-      "id": 84,
-      "name": "Lorem ipsum text with three words",
-      "nameDe": "Lorem-Ipsum-Text mit drei Wörten",
-      "emmet": "lorem3",
-      "result": "4Lorem, ipsum dolor.",
-      "btntext": ["lorem", "3"]
-    },
-    {
-      "id": 1,
-      "name": "Navigation with one list item",
-      "nameDe": "Navigation mit einem Listenpunkt",
-      "emmet": "nav>ul>li",
-      "result": "<nav>\n<ul>\n<li></li>\n</ul>\n</nav> ",
-      "btntext": ["nav", "ul", "li"]
-    },
-    {
-      "id": 2,
-      "name": "Div-container followed from a paragraph and a blockquote",
-      "nameDe": "Div-Container gefolgt von einem Absatz und einem Zitatblock",
-      "emmet": "div+p+bq",
-      "result": "<div></div>\n<p></p>\n<blockquote></blockquote>",
-      "btntext": ["div", "p", "bq"]
-    },
-    {
-      "id": 3,
-      "name": "",
-      "nameDe": "",
-      "emmet": "div+div>p>span+em^bq",
-      "result": "<div></div>\n<div>\n<p><span></span><em></em></p>\n<blockquote></blockquote>\n</div>",
-      "btntext": ["div", "p", "span", "em", "^", "bq"]
-    },
-    {
-      "id": 4,
-      "name": "",
-      "nameDe": "",
-      "emmet": "div+div>p>span+em^^bq",
-      "result": "<div></div>\n<div>\n<p><span></span><em></em></p>\n</div>\n<blockquote></blockquote>",
-      "btntext": ["div", "p", "span", "em", "^", "bq"]
-    },
-    {
-      "id": 5,
-      "name": "",
-      "nameDe": "",
-      "emmet": "div>(header>ul>li*2>a)+footer>p",
-      "result": "<div>\n<header>\n<ul>\n<li><a href=\"\"></a></li>\n<li><a href=\"\"></a></li>\n</ul>\n</header>\n<footer>\n<p></p>\n</footer>\n</div>",
-      "btntext": ["div", "header", "ul", "li", "2", "a", "footer", "p"]
-    },
-    {
-      "id": 6,
-      "name": "",
-      "nameDe": "",
-      "emmet": "",
-      "result": "",
-      "btntext": ["", "", ""]
-    },
-    {
-      "id": 7,
-      "name": "",
-      "nameDe": "",
-      "emmet": "",
-      "result": "",
-      "btntext": ["", "", ""]
-    },
-    {
-      "id": 8,
-      "name": "",
-      "nameDe": "",
-      "emmet": "",
-      "result": "",
-      "btntext": ["", "", ""]
-    },
-    {
-      "id": 9,
-      "name": "",
-      "nameDe": "",
-      "emmet": "",
-      "result": "",
-      "btntext": ["", "", ""]
-    },
-    {
-      "id": 10,
-      "name": "",
-      "nameDe": "",
-      "emmet": "",
-      "result": "",
-      "btntext": ["", "", ""]
-    }
-  ]
+    "exercises": [
+        {
+            "id": 1,
+            "category": "Syntax",
+            "name": "Child: >",
+            "nameDe": "Kinder: >",
+            "emmet": "nav>ul>li",
+            "result": "<nav>\n<ul>\n<li></li>\n</ul>\n</nav>/// <nav>\n<ul>\n<li></li>\n</ul>\n</nav>//",
+            "btntext": ["nav", "ul", "li", "ul", "li", "ul", "li", "ul", "li"]
+        },
+        {
+            "id": 2,
+            "category": "Syntax",
+            "name": "Sibling: +",
+            "nameDe": "Geschwister: +",
+            "emmet": "div+p+bq",
+            "result": "<div></div>\n<p></p>\n<blockquote></blockquote>",
+            "btntext": ["div", "p", "bq"]
+        },   
+        {
+            "id": 3,
+            "category": "Syntax",
+            "name": "Climp-up : ^ (1)",
+            "nameDe": "Hochklettern: ^ (1)",
+            "emmet": "div+div>p>span+em^bq",
+            "result": "<div></div>\n<div>\n<p>\n<span></span><em></em></p>\n<blockquote></blockquote>\n</div>",
+            "btntext": ["div", "p", "span", "em^bq"]
+        },   
+        {
+            "id": 4,
+            "category": "Syntax",
+            "name": "Climp-up: ^ (2)",
+            "nameDe": "Hochklettern: ^ (2)",
+            "emmet": "div+div>p>span+em^^bq",
+            "result": "<div></div>\n<div>\n<p>\n<span></span><em></em>\n</p>\n</div>\n<blockquote></blockquote>\n",
+            "btntext": ["div", "p", "span", "em^^bq"]
+        },
+        {
+            "id": 13,
+            "category": "Syntax",
+            "name": "ID and CLASS attributes (1)",
+            "nameDe": "ID- und CLASS-Attribute (1)",
+            "emmet": "#header",
+            "result": "<div id=\"header\"></div>",
+            "btntext": ["#","header"]
+        },
+        {
+            "id": 90,
+            "category": "HTML",
+            "name": "",
+            "nameDe": "",
+            "emmet": "input:url",
+            "alias": "inp[type=url]",    
+            "result": "<input type=\"url\" name=\"\" id=\"\" />",
+            "btntext": ["input", "url"]
+        },
+        {
+            "id": 91,
+            "category": "HTML",
+            "name": "",
+            "nameDe": "",
+            "emmet": "input:password",
+            "emmet2": "input:p",
+            "alias": "inp[type=password]",           
+            "result": " <input type=\"password\" name=\"\" id=\"\" />",
+            "btntext": ["input", "password"]
+        },
+        {
+            "id": 92,
+            "category": "HTML",
+            "name": "",
+            "nameDe": "",
+            "emmet": "input:datetime",
+            "alias": "inp[type=datetime]",
+            "result": "<input type=\"datetime\" name=\"\" id=\"\" />",
+            "btntext": ["input", "datetime"]
+        },
+        {
+            "id": 93,
+            "category": "HTML",
+            "name": "",
+            "nameDe": "",
+            "emmet": "input:date",
+            "alias": "inp[type=date]",
+            "result": " <input type=\"date\" name=\"\" id=\"\" />",
+            "btntext": ["input", "date"]
+        },
+        {
+            "id": 94,
+            "category": "HTML",
+            "name": "",
+            "nameDe": "",
+            "emmet": "input:datetime-local",
+            "alias": "inp[type=datetime-local]",
+            "result": "<input type=\"datetime-local\" name=\"\" id=\"\" />",
+            "btntext": ["input", "datetime", "local"]
+        },
+        {
+            "id": 95,
+            "category": "HTML",
+            "name": "",
+            "nameDe": "",
+            "emmet": "input:month",
+            "alias": "inp[type=month]",
+            "result": "<input type=\"month\" name=\"\" id=\"\" />",
+            "btntext": ["input", "month"]
+        },   
+        {
+            "id": 96,
+            "category": "HTML",
+            "name": "",
+            "nameDe": "",
+            "emmet": "input:week",
+            "alias": "inp[type=week]",   
+            "result": "<input type=\"week\" name=\"\" id=\"\" />",
+            "btntext": ["input", "week"]
+        },
+        {
+            "id": 97,
+            "category": "HTML",
+            "name": "",
+            "nameDe": "",
+            "emmet": "input:time",
+            "alias": "inp[type=time]",
+            "result": "<input type=\"time\" name=\"\" id=\"\" />",
+            "btntext": ["input", "time"]
+        },
+        {
+            "id": 98,
+            "category": "HTML",
+            "name": "",
+            "nameDe": "",
+            "emmet": "input:tel",
+            "alias": "inp[type=tel]",
+            "result": "<input type=\"tel\" name=\"\" id=\"\" />",
+            "btntext": ["input", "tel"]
+        },    
+        {
+            "id": 99,
+            "category": "HTML",
+            "name": "",
+            "nameDe": "",
+            "emmet": "input:number",
+            "alias": "inp[type=number]",
+            "result": "<input type=\"number\" name=\"\" id=\"\" />",
+            "btntext": ["input", "number"]
+        },
+        {
+            "id": 100,
+            "category": "HTML",
+            "name": "",
+            "nameDe": "",
+            "emmet": "input:color",
+            "alias": "inp[type=color]",
+            "result": " <input type=\"color\" name=\"\" id=\"\" />",
+            "btntext": ["input", "color"]
+        },
+        {
+            "id": 101,
+            "category": "HTML",
+            "name": "",
+            "nameDe": "",
+            "emmet": "input:checkbox",
+            "emmet2": "input:c",
+            "alias": "inp[type=checkbox]",
+            "result": "<input type=\"checkbox\" name=\"\" id=\"\" />",
+            "btntext": ["input", "checkbox"]
+        },
+        {
+            "id": 102,
+            "category": "HTML",
+            "name": "",
+            "nameDe": "",
+            "emmet": "input:radio",
+            "emmet2": "input:r",
+            "alias": "inp[type=radio]",
+            "result": "<input type=\"radio\" name=\"\" id=\"\" />",
+            "btntext": ["input", "radio"]
+        },
+        {
+            "id": 103,
+            "category": "HTML",
+            "name": "",
+            "nameDe": "",
+            "emmet": "input:range",
+            "alias": "inp[type=range]",
+            "result": "<input type=\"range\" name=\"\" id=\"\" />",
+            "btntext": ["input", "range"]
+        },
+        {
+            "id": 104,
+            "category": "HTML",
+            "name": "",
+            "nameDe": "",
+            "emmet": "input:file",
+            "emmet2": "input:f",
+            "alias": "inp[type=file]",
+            "result": "<input type=\"file\" name=\"\" id=\"\" />",
+            "btntext": ["input", "file"]
+        }
+    ]
 }
