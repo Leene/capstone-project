@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { COLORS } from '../constants';
 
 
+
 export default function Keyboard(props) {
   const {inputText, setInputText, order, orderNum } = props
 

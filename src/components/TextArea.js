@@ -124,7 +124,7 @@ const Textarea = styled.div`
 `
 const BTN = styled.button`
 cursor:pointer;
-width:60px;
+min-width:60px;
 Border-radius:20px;
 border:none;
    box-shadow: 1px 2px 3px 3px rgba(58, 32, 10, 0.2); 
