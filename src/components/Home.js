@@ -7,7 +7,7 @@ import { COLORS } from '../constants'
 export default function Home() {
     return (
         <Main>
-            <LOGO alt="logos" src="https://www.wirrgarten.de/emmet-game/img/EmmetGame_Frontlogo_Schatten.png" />
+            <LOGO alt="logo" src="https://www.wirrgarten.de/emmet-game/img/EmmetGame_Frontlogo_Schatten.png" />
             <Text>
                 Erlerne Emmet-Befehle spielerisch! <br />
                 Drücke oben rechts den Start-Button.
