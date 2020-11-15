@@ -2,10 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { COLORS } from '../constants'
 
+
+
 export default function Home() {
     return (
         <Main>
-            <LOGO alt="logo" src="/EmmetGame_Frontlogo_Schatten.png" />
+            <LOGO alt="logos" src="/img/EmmetGame_Frontlogo_Schatten.png" />
             <Text>
                 Erlerne Emmet-Befehle spielerisch! <br />
                 Drücke oben rechts den Start-Button.

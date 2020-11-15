@@ -34,7 +34,7 @@ export default function GameArea() {
     return (
         <Gamefield>
             <Header>
-            <HeadLogo alt="logo" src="/EmmetGame_Headlogo_Schatten.png"/>
+            <HeadLogo alt="logo" src="/img/EmmetGame_Headlogo_Schatten.png"/>
             </Header>
             <WinnerDialog
                 winnerDialog={winnerDialog}
