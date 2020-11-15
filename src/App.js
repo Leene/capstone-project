@@ -8,8 +8,7 @@ import Home from './components/Home'
 // import GlobalStyles from './components/GlobalStyles'
 
 const home_icon = 'https://img.icons8.com/material-rounded/24/ffffff/home.png'
-const start_icon =
-    'https://img.icons8.com/ios-filled/24/ffffff/circled-play.png'
+const start_icon ='https://img.icons8.com/ios-filled/24/ffffff/circled-play.png'
 
 export default function App() {
     return (
@@ -58,7 +57,7 @@ const LinkStyled = styled(Link)`
 `
 
 const NavButton = styled.button`
-    background-color: rgba(${COLORS.violet}, 0.5);
+    background-color: rgba(${COLORS.primary}, 1);
     height: 3em;
     border: none;
     border-radius: 0 0 100px 100px;

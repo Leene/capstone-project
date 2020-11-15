@@ -56,9 +56,10 @@ export default function GameArea() {
             <Boxarea>
                 
                     <div>{Feedback(feedback)}</div>
-                    <DIV><div><p>{orderNum+1} / {exercises.length}</p></div>
-                </DIV>
+                    <DIV><p>{orderNum+1} / {exercises.length}</p></DIV>
+ <InsetShadow>
                 <Box>
+                   
                     <Textbox>
                         <code>{newText}</code>
                     </Textbox>
@@ -78,8 +79,8 @@ export default function GameArea() {
                         setWinnerDialog={setWinnerDialog}
                     />
                     {/* {TextArea(getTypedText(), inputText, setInputText, hint)} */}
-                    
                  </Box>
+            </InsetShadow>
             </Boxarea>
             <Gameinterface>
                 <GameInterface
@@ -153,7 +154,9 @@ const Box = styled.div`
     background-color: rgba(${COLORS.light}, 0.2);
     box-shadow: 1px 1px 8px 3px ${COLORS.shadow_RGBA};
 `
-
+const InsetShadow = styled.div`
+box-shadow: inset  1px 1px 2px 0px  rgba(${COLORS.light}, 0.8); 
+`
 const Textbox = styled.div`
     background-color: rgba(${COLORS.violet}, 0.7);
     color: rgb(${COLORS.code});

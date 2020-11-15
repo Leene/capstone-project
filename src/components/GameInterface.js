@@ -24,7 +24,7 @@ export default function GameInterface(props) {
                 <p>{scoreState}</p>
             </Score>
             <Hint>
-                <HintButton onClick={() => setShowText(!showText)}>
+                <HintButton title="Lösung ein-/ausblenden" onClick={() => setShowText(!showText)}>
                     HINT
                 </HintButton>
                 <HintTextDiv>
@@ -46,6 +46,9 @@ function Lifecon(amount) {
 }
 
 const HintTextDiv = styled.div`
+display:flex;
+align-items:center;
+justify-content:center;
     width: 75%;
     height: 100%;
     background-color: rgb(${COLORS.hintfield});
@@ -54,6 +57,7 @@ const HintTextDiv = styled.div`
 `
 
 const HintText = styled.p`
+font-size: 80%;
     margin: 0;
     padding: 0;
 `
