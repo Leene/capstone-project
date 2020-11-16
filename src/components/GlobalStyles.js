@@ -2,8 +2,12 @@ import { createGlobalStyle } from "styled-components/macro";
 
 export default createGlobalStyle`
  
-body {
+&body {
     height: 100vh;
     width: 100vw;
-  }
+   
+
+      background-color: grey;
+    }
+  
 `;

@@ -35,6 +35,8 @@ const LOGO = styled.img`
     text-align: center;
     margin: 10vh 0 0 0;
     width: 50vw;
+    max-width:300px;
+
 `
 
 const URLBtn = styled.a`

@@ -5,7 +5,6 @@ import { Router, Link } from '@reach/router'
 import GameArea from './components/GameArea'
 import Details from './components/Details'
 import Home from './components/Home'
-// import GlobalStyles from './components/GlobalStyles'
 
 const home_icon = 'https://img.icons8.com/material-rounded/24/ffffff/home.png'
 const start_icon ='https://img.icons8.com/ios-filled/24/ffffff/circled-play.png'
@@ -44,6 +43,7 @@ const Main = styled.main`
     height: 100vh;
     font-size: calc(10px + 2vmin);
     color: #555;
+    overflow: hidden;
 `
 
 const Header = styled.header`
