@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { COLORS } from './constants'
 import { Router, Link } from '@reach/router'
 import GameArea from './components/GameArea'
-import Details from './components/Details'
 import Home from './components/Home'
 
 const home_icon = 'https://img.icons8.com/material-rounded/24/ffffff/home.png'
@@ -27,8 +26,6 @@ export default function App() {
             <Router>
                 <Home path="/"></Home>
                 <GameArea path="/gamearea/"></GameArea>
-                <Details path="/details/"></Details>
-                {/* <GameArea path= "/gamearea/:id"></GameArea> */}
             </Router>
         </Main>
     )
