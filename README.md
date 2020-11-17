@@ -9,7 +9,7 @@ Emmet expressions are a kind of short-cuts for code snippets of different langua
 
 ## Project Background
 
-Originally this Project had started as capstone-project of a Web Developer Bootcamp I attended in March 2020. The task was to build a little mobile app in react.js. The project idea was totally free.
+Originally this project had started as capstone-project of a Web Developer Bootcamp I attended in March 2020. The task was to build a little mobile app in react.js. The project idea was totally free.
 
 ## Used Programming Technologies
 
