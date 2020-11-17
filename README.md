@@ -16,7 +16,7 @@ Originally this Project had started as capstone-project of a Web Developer Bootc
 Main Technology is React.js. In detail you find the usage of 
  - Functional programming as basic concept
  - JSX (styled components)
- - Reach router Navigation
+ - Reach router navigation
  - Props
  - State hooks
 
