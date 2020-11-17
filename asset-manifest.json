@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.819ce808.chunk.css",
-    "main.js": "/static/js/main.65f28296.chunk.js",
-    "main.js.map": "/static/js/main.65f28296.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.1dd972f5.js",
-    "runtime-main.js.map": "/static/js/runtime-main.1dd972f5.js.map",
-    "static/js/2.b456d620.chunk.js": "/static/js/2.b456d620.chunk.js",
-    "static/js/2.b456d620.chunk.js.map": "/static/js/2.b456d620.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.819ce808.chunk.css.map": "/static/css/main.819ce808.chunk.css.map",
-    "static/js/2.b456d620.chunk.js.LICENSE.txt": "/static/js/2.b456d620.chunk.js.LICENSE.txt"
+    "main.css": "/emmet-game/static/css/main.819ce808.chunk.css",
+    "main.js": "/emmet-game/static/js/main.24ce39a6.chunk.js",
+    "main.js.map": "/emmet-game/static/js/main.24ce39a6.chunk.js.map",
+    "runtime-main.js": "/emmet-game/static/js/runtime-main.cb45543c.js",
+    "runtime-main.js.map": "/emmet-game/static/js/runtime-main.cb45543c.js.map",
+    "static/js/2.3956ed40.chunk.js": "/emmet-game/static/js/2.3956ed40.chunk.js",
+    "static/js/2.3956ed40.chunk.js.map": "/emmet-game/static/js/2.3956ed40.chunk.js.map",
+    "index.html": "/emmet-game/index.html",
+    "static/css/main.819ce808.chunk.css.map": "/emmet-game/static/css/main.819ce808.chunk.css.map",
+    "static/js/2.3956ed40.chunk.js.LICENSE.txt": "/emmet-game/static/js/2.3956ed40.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.1dd972f5.js",
-    "static/js/2.b456d620.chunk.js",
+    "static/js/runtime-main.cb45543c.js",
+    "static/js/2.3956ed40.chunk.js",
     "static/css/main.819ce808.chunk.css",
-    "static/js/main.65f28296.chunk.js"
+    "static/js/main.24ce39a6.chunk.js"
   ]
 }
