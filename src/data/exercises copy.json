@@ -70,7 +70,7 @@
             "nameDe": "Nummerierung von Elementen: $ (1)",
             "emmet": "ul>li.item$*5",
             "result": "<ul>\n<li class= \"item1\"></li>\n<li class= \"item2\"></li>\n<li class= \"item3\"></li>\n<li class= \"item4\"></li>\n<li class= \"item5\"></li>\n</ul>",
-            "btntext": ["ul", "li", "item", "5"]
+            "btntext": ["ul", "li", "item", "$", "5"]
         },
         {
             "id": 9,
@@ -79,7 +79,7 @@
             "nameDe": "Nummerierung von Elementen: $ (2)",
             "emmet": "h$[title=item$]{Header $}*3",
             "result": " <h1 title=\"item1\">Header 1</h1>\n<h2 title=\"item2\">Header 2</h2>\n<h3 title=\"item3\">Header 3</h3\n",
-            "btntext": ["h", "title", "item", "Header ", "3"]
+            "btntext": ["h", "title", "item", "$", "Header ", "3"]
         },   
         {
             "id": 10,
@@ -88,7 +88,7 @@
             "nameDe": "Nummerierung von Elementen: $ (3)",
             "emmet": "ul>li.item$$$*5",
             "result": "<ul>\n<li class=\"item001\"></li>\n<li class=\"item002\"></li>\n<li class=\"item003\"></li>\n<li class=\"item004\"></li>\n<li class=\"item005\"></li>\n</ul> ",
-            "btntext": ["ul", "li", "item", "5"]
+            "btntext": ["ul", "li", "item", "$", "5"]
         },   
         {
             "id": 11,
@@ -97,7 +97,7 @@
             "nameDe": "Nummerierung von Elementen: $ (4)",
             "emmet": "ul>li.item$@-*5",
             "result": "<ul>\n<li class=\"item5\"></li>\n<li class=\"item4\"></li>\n<li class=\"item3\"></li>\n<li class=\"item2\"></li>\n<li class=\"item1\"></li>\n</ul> ",
-            "btntext": ["ul", "li", "item", "@", "5"]
+            "btntext": ["ul", "li", "item", "$", "@", "5"]
         },   
         {
             "id": 12,
@@ -106,7 +106,7 @@
             "nameDe": "Nummerierung von Elementen: $ (5)",
             "emmet": "ul>li.item$@3*5",
             "result": "<ul>\n<li class=\"item3\"></li>\n<li class=\"item4\"></li>\n<li class=\"item5\"></li>\n<li class=\"item6\"></li>\n<li class=\"item7\"></li>\n</ul>",
-            "btntext": ["ul", "li", "item", "@", "3", "5"]
+            "btntext": ["ul", "li", "item", "$", "@", "3", "5"]
         },      
         {
             "id": 13,
