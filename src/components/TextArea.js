@@ -22,8 +22,6 @@ export default function TextArea(props) {
     const btnDeleteText = 'X'
     const btnInputText = 'OK'
 
-    let i = orderNum
-
     const handleOKBtnClick = () => {
         if (inputText === hint) {
             setScoreState(scoreState + 10)
