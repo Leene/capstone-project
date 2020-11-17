@@ -36,7 +36,7 @@ export default function GameArea() {
             <Header>
                 <HeadLogo
                     alt="logo"
-                    src="https://www.wirrgarten.de/emmet-game/img/EmmetGame_Headlogo_Schatten.png"
+                    src="../img/EmmetGame_Headlogo_Schatten.png"
                 />
             </Header>
             <WinnerDialog

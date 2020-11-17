@@ -7,7 +7,7 @@ export default function Home() {
         <Main>
             <LOGO
                 alt="logo"
-                src="https://www.wirrgarten.de/emmet-game/img/EmmetGame_Frontlogo_Schatten.png"
+                src="../img/EmmetGame_Frontlogo_Schatten.png"
             />
             <Text>
                 Erlerne Emmet-Befehle spielerisch! <br />
